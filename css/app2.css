@@ -1,3 +1,16 @@
 h1 {
     text-align: center;
+    font-weight: 600;
+    text-decoration: #A7AB19 wavy underline ;
+    letter-spacing: 10px;
+}
+
+p {
+    text-align: center;
+    line-height: 150%;
+    
+}
+
+a{
+    text-decoration: none;
 }
