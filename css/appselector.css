@@ -1,0 +1,46 @@
+/*
+* {
+    background-color: rgb(15, 17, 121);
+    color: rgb(209, 31, 31);
+} 
+*/
+
+p.pclasse{
+    background-color: #ffc6ff;
+}
+
+body{
+    background-color: #f1faee;
+}
+
+button {
+    font-size: 30px;
+    background-color: #f4a261;
+}
+
+#signupid{
+    background-color: aquamarine;
+    color: brown;
+}
+
+h1, h2{
+    color: darkslateblue;
+}
+
+span{
+    color: #ffadad;
+}
+
+.classetag{
+    color:#ffba08;
+    background-color: #6a040f;
+    font-size: 16px;
+}
+
+.postclass a {
+    color:#06d6a0;
+}
+
+footer nav ul li a {
+    color:#9c6644;
+}
