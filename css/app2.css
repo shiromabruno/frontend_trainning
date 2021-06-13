@@ -1,13 +1,18 @@
 h1 {
     text-align: center;
-    font-weight: 600;
-    text-decoration: #A7AB19 wavy underline ;
+    font-weight: 100;
+    text-decoration: #A7AB19 wavy underline ; /* essa eh a cor do underline. Pra color da letra eh so color: bla*/
     letter-spacing: 10px;
+    font-size: 70px;
+    color: bisque;
+    font-family: Avant Garde, Futura, Arial, sans-serif; 
+    /* font-family: fantasy;   --> vai pegar qualque um dentro da familia. Familia eh composta por varias fontes. De cima eh lista backups*/
 }
 
 p {
     text-align: center;
     line-height: 150%;
+    font-family: sans-serif;
     
 }
 
