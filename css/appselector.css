@@ -44,3 +44,17 @@ span{
 footer nav ul li a {
     color:#9c6644;
 }
+
+input + button{
+    background-color: rgb(105, 190, 87);
+}
+
+h2 + button{
+    font-size: 20px;
+    background-color: #4d194d ;
+    color: white;
+}
+
+footer > a{
+    color: #000;
+}
