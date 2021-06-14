@@ -6,7 +6,7 @@
 */
 
 p.pclasse{
-    background-color: #ffc6ff;
+    background-color: #f3a4f3;
 }
 
 body{
@@ -19,7 +19,7 @@ button {
 }
 
 #signupid{
-    background-color: aquamarine;
+    background-color: rgb(224, 171, 22);
     color: brown;
 }
 
@@ -28,7 +28,7 @@ h1, h2{
 }
 
 span{
-    color: #ffadad;
+    color: #f00303;
 }
 
 .classetag{
@@ -38,7 +38,7 @@ span{
 }
 
 .postclass a {
-    color:#06d6a0;
+    color:#00fab7;
 }
 
 footer nav ul li a {
@@ -46,7 +46,8 @@ footer nav ul li a {
 }
 
 input + button{
-    background-color: rgb(105, 190, 87);
+    background-color: rgb(13, 49, 40);
+    color: #f1faee;
 }
 
 h2 + button{
@@ -57,4 +58,73 @@ h2 + button{
 
 footer > a{
     color: #000;
+}
+
+input[type="password"] {
+    color:rgb(172, 20, 15)
+}
+/*
+section[class="postclass"]{  /* poderia ser section.postclass
+    background-color: #b1c5d1;
+}
+*/
+
+section.postclass{  /* section[class="postclass"] */
+    background-color: #b1c5d1;
+}
+
+/*
+.postclass:nth-of-type(3){  /* poderia ser section.postclass. So pega o TERCEIRO de uma lista X elementos
+    background-color: #78868f;
+}
+*/
+
+.postclass:nth-of-type(3n){  /* poderia ser section.postclass. So pega o TERCEIRO e vai somando +3 de uma lista X elementos*/
+    background-color: #78868f;
+}
+
+a[href*="google"]{ /* se possui 'google' no nome. Se fosse como termina com com,  href$="com"*/
+    color: magenta;
+}
+
+a[href$="br"]{ /* se possui 'google' no nome. Se fosse como termina com com,  href$="com"*/
+    color: rgb(94, 204, 176);
+}
+
+button:hover{
+    background-color: #43aa8b;
+    color: #492d49;
+}
+
+button:active{
+    background-color: #6000fa;
+    color:#050500
+}
+
+.postclass button:hover{
+    background-color: #a5306a;
+    color: #cec35f;
+}
+
+.spanclass:hover{
+    background-color: #a5306a;
+    color: #cec35f;
+    text-decoration: wavy overline;
+}
+
+.spanclass2:hover{
+    background-color: #32fc00;
+    color: #050500;
+    font-weight:bolder;
+    text-decoration: #f3a4f3 dotted underline;
+}
+
+.pesquisa{
+    font-size: larger;
+    font-weight: bolder;
+    background-color: #807b64;
+}
+
+input[type="radio"]:checked{
+  box-shadow: 0 0 0 3px hotpink;
 }
