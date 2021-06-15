@@ -4,6 +4,11 @@
     color: rgb(209, 31, 31);
 } 
 */
+/*
+<!-- SPECIFUCITY -->
+<!-- !important --> Inline <stylee> --> ID --> CLASS, Pseudo Class (:) --> Element, Pseudo Element (::)  -->
+ Se colocar !important, depois de uma definicao, entao tera prioridade maxima suprema
+*/
 
 p.pclasse{
     background-color: #f3a4f3;
@@ -96,6 +101,17 @@ button:hover{
     color: #492d49;
 }
 
+button:hover{
+    background-color: #f7e703;
+    color: #ff06ff;
+}
+
+.spanclass:hover{
+    background-color: #a5306a;
+    color: #cec35f;
+    text-decoration: wavy overline;
+}
+
 button:active{
     background-color: #6000fa;
     color:#050500
@@ -127,4 +143,23 @@ button:active{
 
 input[type="radio"]:checked{
   box-shadow: 0 0 0 3px hotpink;
+}
+
+h2::first-letter{
+    font-size: 50px;
+}
+
+p::first-line{
+color: #6000fa
+}
+
+p::selection{
+    background-color:#32fc00;
+}
+
+p::after{
+    font-size: 20px;
+    color: #6000fa;
+    font-weight: 400;
+    content: "Inserido com ::AFTER";
 }
