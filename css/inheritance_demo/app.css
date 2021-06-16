@@ -1,0 +1,23 @@
+body{
+    color:blueviolet;
+}
+
+h1{
+    color: blue;
+}
+
+section{
+    color:green;
+}
+
+form{
+    color:red;
+}
+
+input[type="text"]{
+    color:#0f5679;
+}
+
+button, input{
+    color:inherit;
+}
