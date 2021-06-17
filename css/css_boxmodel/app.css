@@ -1,3 +1,7 @@
+body{
+    margin: 0;
+}
+
 div{
     width: 200px;
     height: 200px;
@@ -7,6 +11,17 @@ h1{
     width: 200px;
     height: 50px;
     background-color: #2a9d8f;
+    padding-left: 5px;
+    padding-right: 50px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    margin-bottom: 0;
+
+}
+
+span{
+    margin-left: 100px;
+    margin-top: 100px;  /* Nao desce mais com o comando... */
 }
 
 #one{
@@ -15,6 +30,8 @@ border-width: 5px;
 border-color: black; 
 border-style: solid;
 box-sizing: border-box; /* forces a ficar no tamanho desejado 200 x 200 (sem esse comando, ficou 210 x 210 por causa dos 5px do border-width). Logo o tamanho do width ficou 190px */
+margin-left: 50px;
+margin-bottom: 100px;
 }
 
 #two{
@@ -23,6 +40,8 @@ box-sizing: border-box; /* forces a ficar no tamanho desejado 200 x 200 (sem ess
     border-width: 3px;
     border-style: dashed;
     border-left-width: 5px;
+    padding-right: 50px;
+    margin: 200px;
 }
 
 #three{
@@ -31,5 +50,9 @@ box-sizing: border-box; /* forces a ficar no tamanho desejado 200 x 200 (sem ess
     border-bottom-style: dotted;
     border-left-style: dotted;
     border-radius: 50%;
+}
+
+button{
+    padding: 10px 30px 50px 70px;
 }
 
