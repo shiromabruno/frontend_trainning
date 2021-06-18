@@ -1,0 +1,42 @@
+section{
+    background-color: #ee6c4d;
+    width: 100px;
+    height: 100px;
+}
+
+div{
+    background-color: #48bfe3;
+    width: 80%; /* porcentagem em relacao a SECTION (pai) */
+    height: 50%; /* porcentagem em relacao a SECTION (pai) */
+}
+
+h1{
+    font-size: 40px;
+    border: 1px solid black;
+    line-height: 200%; /* 200px daria 80px */
+    
+}
+
+h2{
+    font-size: 2em; /* EM = herda 2x a fonte do PAI, que no caso eh o section */
+    margin-left: 1em; /* EM = herda 1x o FONT-SIZE DO proprio elemnto */
+}
+
+h3{
+    font-size: 3em;
+}
+
+p{
+    font-size: 1em; /* EM = herda 1x a fonte do PAI, que no caso eh o section */
+}
+
+article{
+    font-size: 20px;
+}
+
+button{
+    font-size: 30px;
+    padding: 0 1em; /* EM = HERDA o FONT-SIZE DO proprio elemnto. Deixa proporcional */
+    border-radius: 0.5em; /* EM = HERDA FONT-SIZE DO proprio elemnto. Deixa proporcional */
+    background-color: #72efdd;
+}
