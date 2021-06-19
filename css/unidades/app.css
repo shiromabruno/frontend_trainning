@@ -1,3 +1,7 @@
+html{
+    font-size: 10px;
+}
+
 section{
     background-color: #ee6c4d;
     width: 100px;
@@ -23,7 +27,7 @@ h2{
 }
 
 h3{
-    font-size: 3em;
+    font-size: 3em; /* EM = herda 3x a fonte do PAI, que no caso eh o section */
 }
 
 p{
@@ -40,3 +44,19 @@ button{
     border-radius: 0.5em; /* EM = HERDA FONT-SIZE DO proprio elemnto. Deixa proporcional */
     background-color: #72efdd;
 }
+
+ul{
+    font-size: 1.3em; /* EM = HERDA DO PAI. Nesse caos como tem monte de UL encadeado, fica acumulando os EM. Recursivo */
+}
+
+#article2 h2{
+   font-size: 2rem; /* REM = Herda da Raiz, no caso o HTML primeira linha do css */
+}
+
+#article2 h3{
+    font-size: 3rem; /* REM = Herda da Raiz, no caso o HTML primeira linha do css */
+ }
+
+ #article2 ul{
+     font-size: 0.8rem; /* REM = Herda da Raiz, no caso o HTML primeira linha do css */
+ }
