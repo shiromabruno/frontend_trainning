@@ -1,0 +1,63 @@
+div{
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+    border: 2px solid black;
+    margin: 10px;
+    display: inline-block;
+}
+
+#middle{
+    background-color: aquamarine;
+}
+
+#static #middle{ /* estatico e nao afteado pelo left right bottom top*/
+    position: static;
+    top: 100px; /* nao muda nada pois eh static*/
+}
+
+#relative #middle{ /* baseado no left right bottom top*/
+    position: relative;
+    top: 50px; /*  acrescenta 100px em cima, ou seja o quadrado desce. Pode usar valores negativos -100px*/
+    left: 50px; /*  acrescenta 100px em esquerda, ou seja o quadrado vai pra direita. Pode usar valores negativos -100px*/
+}
+
+ #absolute{
+    position: static;
+} 
+
+#absolute #middle{ /* elemento removido e nao gera space no layout. Posicao se basea ou no pai ou no BODY (no exemmplo). 
+    Trocar acima de static e relative para testar
+    Nao entendi no bottom quando eh static o pai. De resto entendi que o quadrado pra se mover eh o BODY
+    QUando eh relative o pai, deu pra entender, o quadrado pra se mover eh baseado no div pai
+    */
+/*  This position is relative to
+its parent element position when parent element position is relative/absolute.
+document body (browser viewport) when parent element position is static.
+document body (browser viewport) when there is no parent element.
+ */
+    position: absolute;
+    bottom: 3px;
+}
+
+#fixed #middle{ /* Posicao se basea ou no pai ou no BODY (no exemmplo).  SE MOVE JUNTO COM SCROLL*/
+    /* COmo se fosse ABSOLUTE mas nao tem nada a ver com PAI*/
+    position: fixed;
+    top: 100px;
+    left: 100px;
+}
+
+#sticky #middle{ /* Mistura do FIXED com RELATOVE.  SE MOVE JUNTO COM SCROLL mas apenas no elemento (no caso da section sticky) onde se encontra*/
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10px;
+    
+}
+
+body{
+    background-color: antiquewhite;
+}
+
+head{
+    background-color: rgb(238, 6, 226); /* sem efeito*/
+}

@@ -61,9 +61,13 @@ h2 + button{
     color: white;
 }
 
-footer > a{
-    color: #000;
-}
+ footer > a{
+    color: rgb(238, 255, 0); /* Descende direto. No exemplo tem outros A dentro do footer, porém esses A tao dentro de NAV, LU e LI. Nao eh direto Footer e A. */
+ }
+ /*
+footer  a{
+    color: rgb(0, 255, 13);
+} */
 
 input[type="password"] {
     color:rgb(172, 20, 15)

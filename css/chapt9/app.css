@@ -1,0 +1,22 @@
+section{
+    width: 500px;
+    height: 500px;
+    background-color: mediumseagreen;
+}
+
+#rgba{
+width: 50%;
+height: 50%;
+background-color: rgba(255,255,255,0.7) /* so afeta a cor do background. A Cor da fonte continua independente*/
+}
+
+p{
+    color: #aa11cc62; /* AA 09 05 FF - o quarto grupo eh a transparencia*/
+}
+
+#opacity{
+    width: 50%;
+height: 50%;
+background-color: yellow;
+opacity: 50%; /* OPACITY faz no elemento inteiro (no caso dentro do ID inteiro, incluindo fonte color, bacground color, button...)*/
+}
