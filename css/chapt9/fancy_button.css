@@ -14,7 +14,7 @@ button{
     padding: 1em 2em;
     font-size: 1em;
     /*transition: all 0.25s; /* OU VC PODE USAR O COMANDO DE BAIXO*/
-    transition: color 0.25s, border-color 0.25s, box-shadow 0.25s, transform: 0.25s
+    transition: color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;
 }
 
 button:hover{
