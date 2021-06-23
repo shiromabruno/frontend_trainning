@@ -1,0 +1,32 @@
+
+/* UNSPLASH - pegar imagens*/
+/* UNSPLASH - pegar imagens*/
+/* UNSPLASH - pegar imagens*/
+/* UNSPLASH - pegar imagens*/
+/* UNSPLASH - pegar imagens*/
+/*https://developer.mozilla.org/en-US/docs/Web/CSS/background*/
+
+section{
+    width: 80%;
+    height: 500px;
+    background-image: url("https://images.unsplash.com/photo-1624292497389-1dfde8b8c998?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80");
+   /* o comando de baixo nao funfou... tentei colocar blue no final pra preencher de azul a div toda se a imgaem for pequena...*/
+    /* background-image: url("https://images.unsplash.com/photo-1624292497389-1dfde8b8c998?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80"), blue; */
+     background-size: cover;   /* cobre a div inteira*/
+    /*background-size: 20%; /* deixa com 20% do tamanho*/
+    background-repeat: no-repeat; /* nao repete se vc deixar 20% do tamanho,dai ele so fica com quadrado pequeno*/
+    background-position: top; /* inicia a imagem a aprtir de baixo, e nao de cima*/
+    /*poderia CONCATENAR TUDO com comando background (google)*/
+    margin: 0 auto; 
+}
+
+h1{
+    font-size: 100px;
+    color: white;
+}
+
+/* UNSPLASH - pegar imagens*/
+/* UNSPLASH - pegar imagens*/
+/* UNSPLASH - pegar imagens*/
+/* UNSPLASH - pegar imagens*/
+/* UNSPLASH - pegar imagens*/
