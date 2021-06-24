@@ -1,0 +1,23 @@
+img{
+    width: 30%;
+    /* margin: 1.66666666%;  Pode usar o CALC abaixo*/
+    margin: calc(10%/6);
+}
+
+
+/* Colocando em % pra ficar dinamico ao por exemplo, redimensionar a janeka navegador. Se em PX fica hardcoded e nao redimensiona*/
+/* A porcentagem eh em relação a % da tela, e como IMG sao INLINE, fica um ao lado do outro*/
+/* colocando width 30% fica no total 90% (3 imgs) e sobra 10%*/
+/* Nesses 10% tem que encaixar entre as imgs. E tem que ser % pra sempre redimensionar ao diminuir janela */
+/* 10/6 = 1.6666666% */
+/* FlexBox poderia ajudar nessa situacao */
+
+nav{
+    text-transform: uppercase;
+    border-bottom: 2px solid #f1f1f1;
+    width: 30%;
+    margin-left: 1.6666666%; /* somente left pra fciar junto com as fotos, senao ficaria grudado no canto da tela */
+    padding: 1.5em 0; /* pra deixar com espaço entre o texto e o border bottom */
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5em; /* pra testar tamanho, pode ir no INSPECT do google e tentar fontes */
+}
