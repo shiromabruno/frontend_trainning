@@ -7,7 +7,7 @@ h1 {
 #container {
     background-color: #003049;
     width: 90%;
-    height: 700px; /* trocar para fazer varios testes*/
+    height: 500px; /* trocar para fazer varios testes*/
     margin: 0 auto;
     border: 5px solid #003049;
     display: flex;
@@ -20,23 +20,25 @@ h1 {
     
     /*justify-content: flex-start; /* fala que inicia da esquerda pra direita (flex-direction: row) ou de cima pra baixo (flex-direction:column) o*/
     /*justify-content: flex-end; /* fala que inicia da direita pra esquerda (flex-direction: row) ou de baixo pra cima (flex-direction:column) o */
-    /*justify-content: center; /* tudo fica direcionado para o meio; Tanto pra ROW quanto em COLUMN [em column fica grudado na esquerda] */
+    justify-content: center; /* tudo fica direcionado para o meio; Tanto pra ROW quanto em COLUMN [em column fica grudado na esquerda] */
     /*justify-content: space-between; /* deixa espacado certinho dentro do container, ocupa todo espaco da linha/coluna. O primeiro elemento gruda na esquerda (se for row) ou em cima (se for column)*/
     /*justify-content: space-around;  /* mesmo espaco na direita e esquerda (row) em cima e embaixo (column). Primeiro elemento Nao gruda na esquerda ou em cima. Nao sobrepoe direita esquerda ou cima baixo, ou seja o espacamento fica irregular nas beiradas*/
-    justify-content: space-evenly; /* Sobrepoe direita esquerda ou cima baixo, ou seja o espacamento fica regular em todas as direcoes */
+    /*justify-content: space-evenly; /* Sobrepoe direita esquerda ou cima baixo, ou seja o espacamento fica regular em todas as direcoes */
 
-    /* se vc dimimuir a janela do navegador, os itens vao se readequando ou ficando menor.o FLEX-WRAP NAO DEIXA MAIS, ELE COLOCA restante dos quadrados na outra linha ou coluna */
+    /* se vc dimimuir a janela do navegador, os itens vao se readequando ou ficando menor.o FLEX-WRAP NAO DEIXA MAIS, ELE COLOCA restante dos quadrados na outra linha ou coluna (dependendo se for ROW ou COLUMN o flex-direction) */
     /* mesmo se o container for menor por padrao, os divs sao quebrados em outras linhas/colunas*/
     /*flex-wrap: wrap /*  pode combinar com flex-direction e justify-content*/
-    flex-wrap: wrap-reverse /*  o wrap ocorre de forma INVERTIDO/ESPELHO. Numa ROW ao invez de descer o elemento extra, ele sobe*/
+    /*flex-wrap: wrap-reverse; /*  o wrap ocorre de forma INVERTIDO/ESPELHO. Numa ROW ao invez de descer o elemento extra, ele sobe*/
     
-   
-
+    /*align-items: flex-start; /* Padrao */
+    /*align-items: flex-end; /* Num flex-direction row, vc pode usar justify-content e mexer apenas na linha 1. Se quiser na linha N, precisa desse align-itens*/
+    /*align-items: center; /* Imagina uma linha passando no meio dos divs. deixa no centro, baseado no centro do elemento */
+    align-items: baseline; /* Imagina uma linha passando no meio das letras. O alinhamento se da pelas letras e nao mais pelo centro (caso acima). Se as letras tiverem diferentes tamanhos, os DIVS nao ficarao bem alinhados, porem as letras irao*/
 }
 
 #container div{ /* se nao tivesse colocando width e height, os divs nao apareceriam.*/
     width: 200px;
     height: 200px;
     /*display: inline-block;  /* -- funcionou, ficou 'igual' ao flex- entre aspas. Inline-block deixou as margin entre os quadrados coloridos-" */
-  
+   font-size: 4em;
 }
