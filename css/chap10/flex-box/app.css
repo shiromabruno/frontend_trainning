@@ -1,16 +1,21 @@
 body {
     font-family: 'Open Sans', sans-serif;
 }
-h1 {
+h1, h2 {
     text-align: center;
 }
 #container {
     background-color: #003049;
     width: 90%;
-    height: 500px; /* trocar para fazer varios testes*/
+    /*height: 200px; /* trocar para fazer varios testes*/
     margin: 0 auto;
     border: 5px solid #003049;
     display: flex;
+
+    /* shothand pra FLEX*/
+
+    /* flex flex-grow flex-shrink flex-basis. 
+    Exemplo --> Flex 2 2 10%*/
 
     /* 
     
@@ -20,9 +25,9 @@ h1 {
     */
 
     /* MAIN AXIS - definir como eh o main axis*/
-    /*flex-direction: row; /* padrao eh esse, vem setado, primeiro quadrado eh verde e ultimo azul. Comeca do lado esquerdo*/
+    flex-direction: row; /* padrao eh esse, vem setado, primeiro quadrado eh verde e ultimo azul. Comeca do lado esquerdo*/
     /*flex-direction: row-reverse; /* Comecando do lado direito do container, e comeca (inicia) pelo mesmo: verde ao azul*/
-    flex-direction: column; /* em coluna, de cima pra baixo (verde ao azul). COmecando de cima do container*/
+    /*flex-direction: column; /* em coluna, de cima pra baixo (verde ao azul). COmecando de cima do container*/
     /*flex-direction: column-reverse; /* em coluna, de baixo pra cima (azul pro verde). Comecandode baixo do container*/
         /* OS DIVS FICARAM TAMANHO 200X100 AO INVES DE 200X200. A RESPOSTA EH PQ O HEIGHT DO CONTAINER EH 500PX, LOGO, CADA DIV SO PODERIA TER 100 (X5 = 500PX)*/
     
@@ -33,7 +38,7 @@ h1 {
     /*justify-content: space-around;  /* mesmo espaco na direita e esquerda (row) em cima e embaixo (column). Primeiro elemento Nao gruda na esquerda ou em cima. Nao sobrepoe direita esquerda ou cima baixo, ou seja o espacamento fica irregular nas beiradas*/
     /*justify-content: space-evenly; /* Sobrepoe direita esquerda ou cima baixo, ou seja o espacamento fica regular em todas as direcoes */
 
-    /* Como eh distribuido no CROSS AXIS, quando tem multiplas linhas ou colunas. Pode tirar os espacos entre essas linhas e colunas */
+    /* Como eh distribuido os SPACES no CROSS AXIS, quando tem multiplas linhas ou colunas(wrap). Pode tirar os espacos entre essas linhas e colunas */
     /*align-content: center; /* retira os spaces e deixa tudo no centro */
     /*align-content: flex-start; /* retira os spaces e deixa na esquerda se CROSS = esquerda para direita. */
     /*align-content: flex-end; /* retira os spaces e deixa na direita se CROSS = esquerda para direita. */
@@ -41,15 +46,15 @@ h1 {
     /*align-content: space-around; /* mesmo espaco entre os items (porem nas pontas fica menor) e aproveita o espaco todo. */
     /*align-content: space-evenly; /* deixa o espaco igual entre os itens e tbm nas pontas */
 
-    /* DETERMINA COMO os elementos irao WRAP no MAIN AXIS. Se nova coluna ou nova linha*/
+    /* DETERMINA SE os elementos irao WRAP, se surgirao novas colunas ou novas linhas*/
     /* se vc dimimuir a janela do navegador, os itens vao se readequando ou ficando menor.o FLEX-WRAP NAO DEIXA MAIS, ELE COLOCA restante dos quadrados na outra linha ou coluna (dependendo se for ROW ou COLUMN o flex-direction) */
     /* mesmo se o container for menor por padrao, os divs sao quebrados em outras linhas/colunas*/
-    flex-wrap: wrap; /*  pode combinar com flex-direction e justify-content*/
+    /*flex-wrap: wrap; /*  pode combinar com flex-direction e justify-content*/
     /*flex-wrap: wrap-reverse; /*  o wrap ocorre de forma INVERTIDO/ESPELHO. Numa ROW ao invez de descer o elemento extra, ele sobe*/
     
-    /* COMO DISTRIBUI SPACE OU ITEMS NO CROSS AXIS, ou seja , depende como esta no MAIX AXIS*/
-    /*align-items: flex-start; /* Padrao  Num flex-direction: row, ele comeca na primeira linha. No column, seria na primeira coluna */
-    align-items: flex-end; /* Num flex-direction row, a linha fica na linha N. Na flex-direction column, a coluna sai do 1 e fica no N*/
+    /* Como fica a posicao no CROSS AXIS, ou seja , depende como esta no MAIX AXIS*/
+    align-items: flex-start; /* Padrao  Num flex-direction: row, ele comeca na primeira linha. No column, seria na primeira coluna */
+    /*align-items: flex-end; /* Num flex-direction row, a linha fica na linha N. Na flex-direction column, a coluna sai do 1 e fica no N*/
     /*align-items: center; /* Imagina uma linha passando no meio dos divs. deixa no centro, baseado no centro do elemento */
     /*align-items: baseline; /* Imagina uma linha passando no meio das letras. O alinhamento se da pelas letras e nao mais pelo centro (caso acima). Se as letras tiverem diferentes tamanhos, os DIVS nao ficarao bem alinhados, porem as letras irao*/
     /*align-self: center; altera somente pra 1, precisa estar separado, tipo num div:nth-of-type(3) */
@@ -60,22 +65,63 @@ h1 {
     height: 200px;
     /*display: inline-block;  /* -- funcionou, ficou 'igual' ao flex- entre aspas. Inline-block deixou as margin entre os quadrados coloridos-" */
    font-size: 4em; 
+   flex-basis: 600px;   /* SETA o tamanho inicial do item, antes de space adicional seja distribuido. Se width/height tiver 200, ele pegara o tamanho 400px do flex-basis. Se nao tiver wrap e flex-basis for 900px porem o container tiver 400px, entao o width de cada item nao sera 900px sera beeem menor pra caber nos 400px*/
+   /*flex-grow: 1; /* todos os divs ocuparacao por igual todo space disponivel. Se tiver wrap e tiver quebra linha, o quadrado na outra linha/coluna ocupara toda a linha/coluna*/
+    /*max-width: 300px; /* limita o crescimento em um flex-grow (evita de ocupar space todo)*/
+    /* itens comecam com 200px e crescen ate 300px --> flex-basis:200px max-width:300px*/
 }
 
 /*
 div:nth-of-type(3){
-    /* COMO DISTRIBUI SPACE OU ITEMS NO CROSS AXIS, porem altera somente 1 item 
+    /*Como fica a posicao no CROSS AXIS, ou seja , depende como esta no MAIX AXIS*, porem altera somente 1 item /*
     align-self: center;
 }
 
 div:nth-of-type(2){
-    /* COMO DISTRIBUI SPACE OU ITEMS NO CROSS AXIS, porem altera somente 1 item 
+    /* Como fica a posicao no CROSS AXIS, ou seja , depende como esta no MAIX AXIS, porem altera somente 1 item /*
     align-self: flex-end;
 }
 */
 
-div:nth-of-type(5){
-    /* COMO DISTRIBUI SPACE OU ITEMS NO CROSS AXIS, porem altera somente 1 item */
-    /* No exemplo com o COLUMN, justfiy content center, wrap e align itens flex-end, o 5 quadrado fica junto do quadrado do meio, pois tira o espaco entre o meio e o ultimo quadrado. O espaco reservado do quadrado 5 eh tipo 30% do container itnteiro, por isso o 'start' dele eh junto do quadrado do meio*/
+/* div:nth-of-type(5){
+    /* Como fica a posicao no CROSS AXIS, ou seja , depende como esta no MAIX AXIS, porem altera somente 1 item 
+    /* No exemplo com o COLUMN, justfiy content center, wrap e align itens flex-end, o 5 quadrado fica junto do quadrado do meio, pois tira o espaco entre o meio e o ultimo quadrado. O espaco reservado do quadrado 5 eh tipo 30% do container itnteiro, por isso o 'start' dele eh junto do quadrado do meio
     align-self: flex-start;
+} */
+
+/* div:nth-last-of-type(1){ PEGA O ULTIMO !!!!
+    flex-grow: 1;   
+} */
+
+div:nth-of-type(1){
+    /*flex-grow: 1;   /* o primeiro quadrado ocupa todo space disponivel. Se tiver wrap e tiver quebra linha, o quadrado na outra linha/coluna ocupara toda a linha/coluna*/
+    flex-shrink: 2; /* quanto que diminui pra deixar os outros ocuparem mais espaco. Pode diminuir conforme diminui janela do navegador pra ceder espaco.  Proporcao o quanto ele diminui em relacao a outros elementos*/
+}
+
+div:nth-of-type(5){
+    flex-grow: 2;   /*o utlimo quadrado ocupa todo space disponivel ou quando os outros precisam crescer pra atender uma condicao (flex-basis 600px). Como eh 2, entao ele ocupa 2x mais spaces que se fosse 1x. Se tiver wrap e tiver quebra linha, o quadrado na outra linha/coluna ocupara toda a linha/coluna */
+}
+
+
+/* flex flex-grow flex-shrink flex-basis. 
+    Exemplo --> Flex 2 2 10%*/
+
+main{
+    width: 80%;
+    margin: 0 auto;
+    border: 5px solid black;
+    height: 500px;
+    display: flex;
+}
+
+main .sidebar{
+    background-color: rgb(141, 32, 126);
+    border: 2px solid rgb(255, 255, 255);
+    flex: 1 2 300px; /* comeca com 300, mas pode diminuir ate sumir pra ceder espaco pro laranja*/
+    
+}
+
+main .maincontent{
+    background-color: rgb(204, 127, 26);
+    flex: 2 1 800px ; /* */
 }
