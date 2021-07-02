@@ -1,0 +1,68 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-size: 6em;
+    text-align: center;
+}
+nav {
+    font-size: 1.5em;
+}
+
+ul,li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+/* 
+@media(min-width: 600px) and (max-width: 800px){ /* pode ser somente with, max-width
+    h1{
+        color: blueviolet;
+    }
+} */
+/******//******//******//******//******//******//******//******//******//******//******//******//******//******//******/
+/* @media(max-width: 1500px){ /* precisa ser do maior para o menor 
+    h1{
+        color: rgb(32, 22, 175);
+    }
+}
+
+@media(max-width: 1000px){ /* 
+    h1{
+        color: rgb(147, 189, 32);
+    }
+}
+
+@media(max-width: 500px){ /* 
+    h1{
+        color: red;
+    }
+} */
+/******//******//******//******//******//******//******//******//******//******//******//******//******//******//******/
+ @media(min-width: 500px){   /* nesse caso precisa ser do menor para o maior */
+    h1{
+        color: rgb(32, 22, 175);
+    }
+}
+
+@media(min-width: 1000px){ 
+    h1{
+        color: rgb(147, 189, 32);
+    }
+}
+
+@media(min-width: 1500px){  
+    h1{
+        color: red;
+    }
+} 
+
+@media(orientation: landscape){
+    body{
+        background-color: rgb(68, 140, 145);
+    }
+}
+
+
