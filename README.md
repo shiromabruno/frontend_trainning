@@ -1,4 +1,4 @@
-# frontend_trainning
+# frontend_trainning. URL sources
 
 https://developer.mozilla.org/en-US/
 
