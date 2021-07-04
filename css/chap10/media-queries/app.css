@@ -8,12 +8,22 @@ h1 {
 }
 nav {
     font-size: 1.5em;
+    display: flex;
+    justify-content: space-between;
 }
 
 ul,li {
     display: inline;
     margin: 0;
     padding: 0;
+}
+
+ul{
+    /* border: 1px solid red; --> colocamos pra facilitar a visualizacao */
+    flex: 1; /* o UL (3 links) vai ocupar o space todo. entre o HOME e SIGNUP*/
+    max-width: 50%;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 /* 
@@ -59,10 +69,30 @@ ul,li {
     }
 } 
 
-@media(orientation: landscape){
+/* @media(orientation: landscape){
     body{
         background-color: rgb(68, 140, 145);
     }
+} */
+
+@media(max-width: 768px){
+    h1{
+        font-size: 4em;
+    }
+
+    nav, nav ul{
+        flex-direction: column;
+        align-items: center; /* colocou o nav columns que estava na esquerda, para o centro. Posicao do EIXO X, pois eh COLUMN*/
+    }
+
+    /* nav ul{ --> comentou pra colocar la em cima no NAV, NAV UL
+        flex-direction: column;
+        align-items: center; /* colocou o nav columns que estava na esquerda, para o centro. Posicao do EIXO X, pois eh COLUMN
+    } */
 }
 
-
+@media(max-width: 576px){
+    h1{
+        font-size: 2em;
+    }
+}

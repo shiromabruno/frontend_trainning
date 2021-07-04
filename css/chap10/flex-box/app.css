@@ -53,6 +53,7 @@ h1, h2 {
     /*flex-wrap: wrap-reverse; /*  o wrap ocorre de forma INVERTIDO/ESPELHO. Numa ROW ao invez de descer o elemento extra, ele sobe*/
     
     /* Como fica a posicao no CROSS AXIS, ou seja , depende como esta no MAIX AXIS*/
+    /* No media-queries tem um exemplo bom onde com align itens, colocou o NAV menus da esquerda para direita. Usou aign-items: center. O exemplo la era no Posicao do EIXO X, pois eh COLUMN*/
     align-items: flex-start; /* Padrao  Num flex-direction: row, ele comeca na primeira linha. No column, seria na primeira coluna */
     /*align-items: flex-end; /* Num flex-direction row, a linha fica na linha N. Na flex-direction column, a coluna sai do 1 e fica no N*/
     /*align-items: center; /* Imagina uma linha passando no meio dos divs. deixa no centro, baseado no centro do elemento */
