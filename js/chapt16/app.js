@@ -10,12 +10,17 @@
 // }
 
 // numero random gerado de 1 ao 10
-let numeroRandom = Math.floor(Math.random() * 10) + 1
-    if (numeroRandom <= 5){
-        console.log("numero MENOR da metade: " + numeroRandom)
-        alert("numero MENOR da metade: " + numeroRandom)
+//let numeroRandom = Math.floor(Math.random() * 10) + 1
+let numeroRandom = prompt("Digite sua nota, de 1 a 10")
+    if (numeroRandom >= 6){
+        console.log("Vc esta APROVADO: " + numeroRandom)
+        alert("Vc atingiu o minimo pra passar: " + numeroRandom)
+    }
+    else if (numeroRandom >= 3 && numeroRandom < 6 ){
+        console.log("Vc esta de REC: " + numeroRandom)
+        alert("Vc esta de REC: " + numeroRandom)
     }
     else{
-        console.log("numero MAIOR da metade: " + numeroRandom)
-        alert("numero MAIOR da metade: " + numeroRandom)
+        console.log("Vc esta REPROVADO: " + numeroRandom)
+        alert("Vc esta REPROVADO: " + numeroRandom)
     }
