@@ -1,3 +1,11 @@
+let testando = 35;
+console.log(`A variavel eh: ${testando}. Uma conta simples: 1 + 1 eh igual a ${1 + 1}`) // tem que ter o ACENTO
+let produto = "banana";
+let quantidadeproduto = 5;
+let preco = 3.0;
+console.log(`Vc comprou ${quantidadeproduto} ${produto} ao preco de R$${preco} cada. O total foi de R$${quantidadeproduto*preco}`)
+
+
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 // let idadeUser = prompt("Type your age")
 
@@ -35,7 +43,7 @@
     //if(123){ // sempre TRUTH , se fosse IF(0) seria sempre FALSE, pois 0 = FALSE
     //if(0){  // sempre FALSE
     //if(NaN){ //sempre FALSE. Sempre fosse Undefinied tbm
-    let variavel = " "; // se for 0, "", NaN, Undefinied... cai FALSY
+     let variavel = " "; // se for 0, "", NaN, Undefinied... cai FALSY
 
      if(variavel){
         alert("TRUTHY") 
