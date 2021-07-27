@@ -53,5 +53,32 @@ let arraynovo = arra1.reverse()
 slice - copies a portion on an array 
 let animals = ['ant', 'bison', 'camel', 'duck'. 'elephant']
 animals.slice(2,4) ---> array ['camel', 'duck']
+animals.slice(-3) ---> array ['camel', 'duck', 'elephant']
 splice - removes/replaces elements 
-sort - sort an array 
+months.splice(1, 0, 'Feb') ----> Array ['jan', 'Feb', 'March', 'April', 'june']
+months.splice(4, 1 'May', 'teste') ---> array ['jan', 'feb', 'march', 'april', 'may', 'teste'] 
+[a partir do item 4, remove 1 elemento, e no lugar coloca May e teste]
+parametro1 - a partir de qual 
+parametro2 - remove quantos elementos
+parametro3 - insere o que e quantos ? (opcioal)
+sort - sort an array --> transforma tudo em string e compara sequencia de UTF16
+[1, 30, 4, 21, 10000]
+nomedoarray.sort();
+[1, 10000, 21, 30, 4]
+nomedoarray.sort();
+
+arrays usam conceito de ponteiro de memoria
+let fila = [1, 2, 3]
+undefined
+let copiafila = fila
+undefined
+copiafila
+(3) [1, 2, 3]
+copiafila.push(4)
+4
+copiafila
+(4) [1, 2, 3, 4]
+fila
+(4) [1, 2, 3, 4]
+fila === copiafila
+true
