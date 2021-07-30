@@ -14,6 +14,23 @@ undefined
 personObject.firstName
 "Teste"
 
+let objetocomobjeto = { 
+    nome: "bruno",   
+    age: 52,
+    address: ["sao paulo", "brasil", 55],
+    cell: {
+    brand: "apple",
+    year: 2015,
+    price: 1000
+    }
+   }
+   
+objetocomobjeto.cell
+{brand: "apple", year: 2015, price: 1000}
+objetocomobjeto.cell.year
+2015
+objetocomobjeto.address[0]
+"sao paulo"
 
 const objeto = {nome: "bruno", lastname: "shiroma"}
 objeto = {nome: "bruno", lastname: "shiroma", key: "kkk"}
