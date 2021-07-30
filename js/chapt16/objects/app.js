@@ -9,6 +9,27 @@ personObject = {
 
 personObject.firstName
 "Bruno"
+personObject.firstName = "Teste"
+undefined
+personObject.firstName
+"Teste"
+
+
+const objeto = {nome: "bruno", lastname: "shiroma"}
+objeto = {nome: "bruno", lastname: "shiroma", key: "kkk"}
+Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:8
+Eu consigo mexer no conteudo (colocar mais coisas como no exemplos abaixo, porem nao reescrever o 'objeto' como acima)
+
+objeto["mais1"] = "kkk"
+"kkk"
+objeto
+{nome: "teste", lastname: "shiroma", mais1: "kkk"}
+objeto.mais2 = "teste"
+"teste"
+objeto
+{nome: "teste", lastname: "shiroma", mais1: "kkk", mais2: "teste"}
+
 
 let teste = {1999: "good", 2020: "bad"}
 teste.1999
