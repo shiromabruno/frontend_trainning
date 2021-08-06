@@ -10,8 +10,8 @@ function soma(value1, value2){
     return value1 + value2;
 }
 
-// let resultado = soma(5,3);
-// console.log(`resultado da funcao eh: ${resultado}`)
+let resultado = soma(5,3);
+console.log(`resultado da funcao eh: ${resultado}`)
 
 let personObject = {
     nome: "bruno",
