@@ -21,6 +21,19 @@ function funcaoFora(){
     funcaoDentro1()
 }
 
-const addalgo = function (x,y){
+const addAlgo = function (x,y){
     return x+y;
+}
+
+function chamaFuncaoSemParametro(){
+    console.log(`Resultado da funcao eh: ${addAlgo(8,20)}`)
+}
+
+function chamaFuncaoComParametroFuncao(func){
+    console.log(`typeOf: ${typeof(func)}`)
+    console.log(`Resultado da funcao eh: ${func(10,5)}`)
+}
+
+function chamaFuncaoComParametroValores(x, y){
+    console.log(`Resultado da funcao eh: ${addAlgo(x,y)}`)
 }
