@@ -20,3 +20,7 @@ function funcaoFora(){
     
     funcaoDentro1()
 }
+
+const addalgo = function (x,y){
+    return x+y;
+}
