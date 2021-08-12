@@ -1,6 +1,13 @@
 
 const assuntos = ["futebol", "games", "tecnologia", "carreira", "teste"];
 
+
+//PODER SER USADO COM FOREACH
+//PODER SER USADO COM FOREACH
+//PODER SER USADO COM FOREACH
+//PODER SER USADO COM FOREACH
+// numeros.forEach(teste => console.log(teste*teste))
+
 //dessa forma printa o conteudo
 // for(let sub of assuntos){
 //     console.log(sub)
