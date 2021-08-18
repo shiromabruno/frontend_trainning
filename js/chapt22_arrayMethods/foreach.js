@@ -53,3 +53,12 @@ viagens.forEach(function printBarato(element){
     }
 })
 
+viagens.forEach((element) => {
+    if(element.preco < 10001) { 
+        console.log("O pais " + element.pais + " possui valor MENOR que 10.000. Vamos viajar")
+    }
+    else{
+        console.log("O pais " + element.pais + " possui valor MAIOR que 10.000. Nao da para viajar")
+    }
+}
+)
