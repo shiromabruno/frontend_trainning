@@ -22,3 +22,31 @@ listaNumbers.forEach(element => {
     somaTotal =  somaTotal + element;
 })
 
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+let retornoComChaves = (x) => {
+    console.log(`Hey ${x}!`)
+    return `Hey ${x}!`
+}
+
+let retornoComChavesSemReturn = (x) => {
+    //console.log(`Hey ${x}!`)
+    `Hey ${x}!`
+}
+
+let retornoSemChavesComParenteses = x => (
+    `Hey ${x}!`
+)
+
+let retornoSemChavesSemParenteses = (x) => `Hey ${x}!`
+
+const isEven = num => num % 2 === 0;
+
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+let numeros = [1, 2, 3, 4, 5, 6]
+
+let numerosDobrados = numeros.map(function dobra(elemento){
+return elemento*2;
+})
+
+let numerosDobradosArrow = numeros.map( (x) =>  (x * 2))
