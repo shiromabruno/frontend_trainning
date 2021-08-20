@@ -34,10 +34,12 @@ let retornoComChavesSemReturn = (x) => {
     `Hey ${x}!`
 }
 
+// se usar chaves, nao PODE SER FUNCAO COMPLEXA
 let retornoSemChavesComParenteses = x => (
     `Hey ${x}!`
 )
 
+// se usar parenteses e nem chaves, nao PODE SER FUNCAO COMPLEXA
 let retornoSemChavesSemParenteses = (x) => `Hey ${x}!`
 
 const isEven = num => num % 2 === 0;

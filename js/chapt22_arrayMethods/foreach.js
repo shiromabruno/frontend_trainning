@@ -44,14 +44,14 @@ function duplica (x){
 //  console.log("Triplicando valor: " + n * 3)
 // })
 
-viagens.forEach(function printBarato(element){
-    if(element.preco < 10001) { 
-        console.log("O pais " + element.pais + " possui valor MENOR que 10.000. Vamos viajar")
-    }
-    else{
-        console.log("O pais " + element.pais + " possui valor MAIOR que 10.000. Nao da para viajar")
-    }
-})
+// viagens.forEach(function printBarato(element){
+//     if(element.preco < 10001) { 
+//         console.log("O pais " + element.pais + " possui valor MENOR que 10.000. Vamos viajar")
+//     }
+//     else{
+//         console.log("O pais " + element.pais + " possui valor MAIOR que 10.000. Nao da para viajar")
+//     }
+// })
 
 viagens.forEach((element) => {
     if(element.preco < 10001) { 
@@ -62,3 +62,23 @@ viagens.forEach((element) => {
     }
 }
 )
+
+// NAO FUNCIONOU... PQ ?
+viagens.forEach((element) => {
+    if(element.preco < 10001) { 
+        return `O pais ${element.pais}  possui valor MENOR que 10.000. Vamos viajar`
+    }
+    else{
+        return `O pais ${element.pais}  possui valor MAIOR que 10.000. Nao da para viajar`
+    }
+}
+)
+
+
+// arrow com map pra voltar nova lista
+let listaPaisesBaratos = viagens.map( (element) => {
+    if(element.preco < 10001) { 
+        return element
+    }
+})
+
