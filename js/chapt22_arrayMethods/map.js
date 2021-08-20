@@ -1,3 +1,10 @@
+//MAP CRIA/RETORNA UM NOVO ARRAY, no exemplo abaixo, voltou a LISTA TODA DOS APROVADOS (undefined nas posicoes de alunos reprovados)
+//MAP CRIA/RETORNA UM NOVO ARRAY, no exemplo abaixo, voltou a LISTA TODA DOS APROVADOS (undefined nas posicoes de alunos reprovados)
+//MAP CRIA/RETORNA UM NOVO ARRAY, no exemplo abaixo, voltou a LISTA TODA DOS APROVADOS (undefined nas posicoes de alunos reprovados)
+// Para lista limpa usar o FILTER
+// Para lista limpa usar o FILTER
+// Para lista limpa usar o FILTER
+
 let numeros = [1, 2, 3, 4, 5, 6]
 
 let numerosDobrados = numeros.map(function dobra(elemento){
