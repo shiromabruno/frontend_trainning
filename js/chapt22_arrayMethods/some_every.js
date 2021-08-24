@@ -3,7 +3,10 @@
 //SOME RETORNA TRUE OR FALSE NO FINAL
 //ATENDEU A CONDICAO, JA SAI DO SOME (Achou manchester, parou de comparar)
 
-
+//EVERY SO RETORNA TRUE SE ATENDE TODOS OS REQUISITOS DOS ELEMENTOS
+//EVERY SO RETORNA TRUE SE ATENDE TODOS OS REQUISITOS DOS ELEMENTOS
+//EVERY SO RETORNA TRUE SE ATENDE TODOS OS REQUISITOS DOS ELEMENTOS
+//ATENDEU A CONDICAO, JA SAI DO SOME (Achou manchester, parou de comparar)
 
 let teams = ["barcelona", "mancherster united", "bayern", "real madrid", "milan", "juventus"]
 

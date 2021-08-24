@@ -1,27 +1,53 @@
-//SOME RETORNA TRUE OR FALSE NO FINAL
-//SOME RETORNA TRUE OR FALSE NO FINAL
-//SOME RETORNA TRUE OR FALSE NO FINAL
-//ATENDEU A CONDICAO, JA SAI DO SOME (Achou manchester, parou de comparar)
+//Acumulador de elementos
+//(Acumulador, ElementoAtual)
+//(function, INITIAL VALUE) ===> vc coloca o INITIAL como o primeiro valor [como se acrescentasse 1 elemento antes]
 
+let lista1 = [1,2,3,4,5,6,7,8,9,10]
 
+//let totalLista1 = lista1.reduce((x,y) => {return x + y}) 
 
-let teams = ["barcelona", "mancherster united", "bayern", "real madrid", "milan", "juventus"]
+let totalLista2 = lista1.reduce((x,y) => x + y) 
 
+console.log(`O total eh ${totalLista2}`)
 
-let existeTimeMaior10Charact = teams.some(team => {
-    if(team.length > 10){
-        return team;
+let totalLista3 = lista1.reduce((x,y) => x + y, 100) 
+
+console.log(`O total COM SOMATORIA INICIAL eh ${totalLista3}`)
+
+// *-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+let lista3 = [5000,1235,23,97,21,99,621,13,456,10]
+
+let menorNumero = lista3.reduce((min, sequencia) => {
+    if (min > sequencia){
+        return sequencia;
+    }
+    else{
+        return min
     }
 })
 
-console.log("A resposta se a lista tem elementos com mais de 10 elements eh: " + existeTimeMaior10Charact)
+console.log(`O menor de todos do LISTA3 ${menorNumero}`)
 
-// 0-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=
+let lista4 = [5000,1235,23,97,21,99,621,13,456,10]
+
+let menorNumero2 = lista4.reduce((min, sequencia) => {
+    if (min > sequencia){
+        return sequencia;
+    }
+    else{
+        return min
+    }
+}, 1)
+
+console.log(`O menor de todos do LISTA4 com INICIAL = 1:  ${menorNumero2}`)
+
+// *-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 let viagens = [
     {
         pais: "japao",
-        preco: 20000
+        preco: 19000
     },
     {
         pais: "inglaterra",
@@ -41,14 +67,23 @@ let viagens = [
     }
     ]
 
-let viagemMenorQue10 = viagens.some(viagem => {
-    if (viagem.preco < 10000){
-        return viagem
-    }
-})
+    let paisMaisBarato = viagens.reduce((barato, sequencia) => {
+        if (barato.preco > sequencia.preco){
+            return sequencia
+        }
+        else{
+            return barato
+        }
+    })
 
-console.log("A resposta se a lista de viagem tem viagem menor que 10k: " + viagemMenorQue10)
+    let paisMaisCaro = viagens.reduce((caro, sequencia) => {
+        if (caro.preco > sequencia.preco){
+            return caro
+        }
+        else{
+            return sequencia
+        }
+    })
 
-// 0-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=
-
-let allEvens = (x) => x.some(num => num % 2 === 0)
+console.log(`O pais mais barato eh: ${paisMaisBarato}. E o pais mais caro eh: ${paisMaisCaro}`)
+console.log("O pais mais barato eh: " + paisMaisBarato + ". E o pais mais caro eh: " + paisMaisCaro)
