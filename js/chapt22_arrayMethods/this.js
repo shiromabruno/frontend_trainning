@@ -12,6 +12,9 @@ const person = {
             //console.log("AAAAHHHH")
             console.log(this.fullName())
         },3000)
+    },
+    calculate: x =>{
+        console.log(`calculating 1 + 1 = ${1+1}`)
     }
 }
 
