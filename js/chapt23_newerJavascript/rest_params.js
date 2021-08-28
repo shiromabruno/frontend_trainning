@@ -9,7 +9,7 @@
 //Arguments(2) [123, "oi", callee: ƒ, Symbol(Symbol.iterator): ƒ]
 function teste(){
     console.log(arguments)
-}
+} 
 
 //sumSemRestParam(1,2,3,4,5,6,7,8,9)
 //Uncaught TypeError: arguments.reduce is not a function
