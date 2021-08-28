@@ -65,3 +65,33 @@ console.log("ANONIMO A idade REDEFINIDO: " + idadeAnonimoRedefinido)
 console.log("ANONIMO pais: " + pais)
 console.log("ANONIMO sexo: " + sexo)
 console.log("ANONIMO language: " + languageAnon)
+
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+console.log("")
+
+function colocaNome({nomeObjeto, segundoNomeObjeto, outraCoisaQualquer = "outraCoisaQualquerAki"}){
+    console.log(`Nome comoleto eh: ${nomeObjeto} e ${segundoNomeObjeto}. ${outraCoisaQualquer}`)
+}
+
+
+function colocaNomeOutraForma(user){
+    console.log(`Nome comoleto eh: ${user.nomeObjeto} e ${user.segundoNomeObjeto}`)
+}
+
+
+//nomeCompletoObjeto(objeto)
+//"Nome comoleto eh: Corinthians e Sport Club"
+let nomeCompletoObjeto = ({nomeObjeto: nomeObjRed, segundoNomeObjeto: nome2ObjRed, outraCoisaQualquer = "outraCoisaQualquerAki"}) => {
+    return `Nome comoleto eh: ${nomeObjRed} e ${nome2ObjRed}. ${outraCoisaQualquer}`
+}
+
+let objeto = {
+    nomeObjeto: "Corinthians",
+    segundoNomeObjeto: "Sport Club",
+    variavel3: "Nao pode aparecer isso"
+}
+
+colocaNome(objeto);
+colocaNomeOutraForma(objeto);
