@@ -12,6 +12,7 @@
 // }
 
 //NAO EH UM ARRAY. NAO DA PRA USAR MAP, REDUCE, ETC
+//pegando pela TAG
 const allImages = document.getElementsByTagName('img');
 const allPara = document.getElementsByTagName('p');
 
@@ -20,4 +21,14 @@ const allPara = document.getElementsByTagName('p');
 for (let imagem of allImages){
     console.log(imagem.src) // -> mostra a URL, tipo: https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Silky_bantam.jpg/440px-Silky_bantam.jpg
     //imagem.src='https://images.unsplash.com/photo-1598518142144-68fdb94156e5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=332&q=80';
+}
+
+//capturando pela CLASS
+let allSquareClass = document.getElementsByClassName('square');
+
+//somente trocou IMGS das classes SQUARE, a img de cima no BANNER se mantem
+//Nao altera no INDEX
+for (let square of allSquareClass){
+    //console.log(square.baseURI)
+    square.src='https://media.istockphoto.com/photos/manufacturing-storage-warehouse-picture-id186599719?s=612x612';
 }
