@@ -30,5 +30,36 @@ let allSquareClass = document.getElementsByClassName('square');
 //Nao altera no INDEX
 for (let square of allSquareClass){
     //console.log(square.baseURI)
-    square.src='https://media.istockphoto.com/photos/manufacturing-storage-warehouse-picture-id186599719?s=612x612';
+    //square.src='https://media.istockphoto.com/photos/manufacturing-storage-warehouse-picture-id186599719?s=612x612';
 }
+
+
+// *******************************************************************************************************
+// *******************************************************************************************************
+// Substitui o getElementsByTagName, getElementsByTId e .getElementsByClassName 
+
+// querySelector pela classe ou tipo, retorna first match (Tag and Class)
+// querySelectorAll - retorna a collection de elements
+
+console.log(document.querySelector('h1')); // ===> first match, primeiro que encontrar
+console.log(document.querySelector('#toc'));  
+console.log(document.querySelector('.square'));  // ===> first match, primeiro que encontrar
+
+console.log(document.querySelector('img:nth-of-type(2)')) // ===> pega o segundo IMG
+console.log(document.querySelector('a[title = "Java"]')) // <a href="/wiki/Java" title="Java">Java</a> . Selecionando pelo type e ATRIBUTO
+
+//console.log(document.querySelector('p')) // ===> retorna somente um P
+//console.log(document.querySelectorAll('p')) // ===> retrna tds P
+let objetoP = document.querySelectorAll('p');
+console.log("imprimindo atributo baseURI do objetoP [1]>: " + objetoP[1].baseURI); 
+
+// seleciona todos os A dentro de um P. Descendencia. Quero os A dentro de P
+// se for: document.querySelectorAll('a') retorna 24.
+// se for: document.querySelectorAll('p a') retorna 17.
+let todosLinks = document.querySelectorAll('p a');
+for (let link of todosLinks){
+    console.log(link.href);
+}
+
+// Ultimo Exercicio:
+// let checkbox = document.querySelector('input[type = "checkbox"]');
