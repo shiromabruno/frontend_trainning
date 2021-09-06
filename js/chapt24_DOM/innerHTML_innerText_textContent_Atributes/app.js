@@ -44,6 +44,11 @@ let valorHref = document.querySelector('body p a')
 valorHref.getAttribute('href');
 // '/wiki/Southeast_Asia'    ====> Voltara dado diretamente do  HTML
 
+// Para pegar o style dos elementos sem ser pelo valorHref.href  e pegar o resultado 'final' depois de computar os overwritten CSS.
+// Lembre-se que no CSS, tem as questoes de ordem e prioridades, entao nao eh simplesmente pegar o body p a { blabla } do CSS, pois
+// abaixo dessa linha pode ter overwriiten ou peiroridades com ID com classes
+window.getComputedStyle(valorHref);
+
 // pra ver a alteracao, va no index.html no navegador e CTRL + F = Other places in
 valorHref.setAttribute('href', 'https://www.google.com');
 
