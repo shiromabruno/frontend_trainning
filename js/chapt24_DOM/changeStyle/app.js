@@ -27,3 +27,26 @@ for (let link of allLinks){
     link.style.textDecorationColor = 'magenta';
     link.style.textDecorationStyle = 'wavy';
 }
+
+
+// ****************************************************************************************************************************
+// exercicio
+// exercicio
+
+let containerExer = document.querySelector('#container');
+containerExer.style.textAlign = 'center';
+
+let imgExer = document.querySelector('img')
+imgExer.style.width = '150px';
+
+imgExer.style.borderRadius = '50%';
+
+const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']; //PLEASE DON'T CHANGE THIS LINE!
+
+//YOU CODE GOES HERE:
+let todosSpans = document.querySelectorAll('span')
+let i = 0;
+for (let span of todosSpans){
+    span.style.color = colors[i];
+    i++;
+}
