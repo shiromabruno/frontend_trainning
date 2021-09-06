@@ -28,3 +28,48 @@ document.querySelector('p:nth-of-type(2)').innerHTML
 document.querySelector('h1').innerHTML = '<i> colocoando em italico com as tags < i > usando innetHTML</i>. Para voltar a pagina inteira ao original, remover no  <b style = "color: pink;"> <u> app.js </u> </b> os Testes feitos'
 // concatenando codigo com o +=
 document.querySelector('h1').innerHTML += '<sup> colocando um LINK em CIMA com <sup > e += </sup>'
+
+
+/// ********************************************************************************************************************************
+/// ********************************************************************************************************************************
+/// ********************************************************************************************************************************
+
+//Atributes
+
+
+let valorHref = document.querySelector('body p a')
+//valorHref.href             ====> o comando voltara o valor pego do JAVASCRIPT (???)
+// 'file:///D:/wiki/Southeast_Asia'
+
+valorHref.getAttribute('href');
+// '/wiki/Southeast_Asia'    ====> Voltara dado diretamente do  HTML
+
+// pra ver a alteracao, va no index.html no navegador e CTRL + F = Other places in
+valorHref.setAttribute('href', 'https://www.google.com');
+
+
+document.querySelectorAll('input')[0]
+//<input type=​"checkbox" role=​"button" id=​"toctogglecheckbox" class=​"toctogglecheckbox" style=​"display:​none">​
+document.querySelectorAll('input')[1] // OU document.querySelector('input[type = "text"]')
+//<input type=​"text">​
+
+// alterando tipo text para password (aparecera bolinhas no texto da input)
+let inputNovo = document.querySelector('input[type = "text"]')
+
+// alterando tipo text para password (aparecera bolinhas no texto da input) [ essa alteracao nao aparecera no final por conta dos comandos abaixo ]
+inputNovo.type = "password"
+
+// alterando tipo password para color (aparecera para escolher cores no input) [ essa alteracao nao aparecera no final por conta dos comandos abaixo ]
+inputNovo.type = "color"
+
+// alterando tipo color para text de novo 
+inputNovo.setAttribute('type', 'text')
+
+//exercicio 
+//exercicio 
+// input[type = "text"] NAO consegui fazer com:
+//       document.setAttribute('img[src]', 'https://www.flaticon.com/svg/static/icons/svg/3523/3523063.svg')
+
+let exercicio = document.querySelector('img');
+exercicio.setAttribute('src', 'https://www.flaticon.com/svg/static/icons/svg/3523/3523063.svg')
+exercicio.setAttribute('alt', 'chicken')
