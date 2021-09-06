@@ -34,7 +34,7 @@ for (let link of allLinks){
 // exercicio
 
 let containerExer = document.querySelector('#container');
-containerExer.style.textAlign = 'center';
+//containerExer.style.textAlign = 'center';
 
 let imgExer = document.querySelector('img')
 imgExer.style.width = '150px';
@@ -50,3 +50,43 @@ for (let span of todosSpans){
     span.style.color = colors[i];
     i++;
 }
+
+// ****************************************************************************************************************************
+// ClassList
+// ClassList
+
+const h2 = document.querySelector(`h2`);
+h2.getAttribute('class')
+//null
+
+//h2.setAttribute('class', 'purple');
+
+/*
+h2.classList
+DOMTokenList ['purple', value: 'purple']
+h2.getAttribute('class')
+'purple'
+*/
+
+// Para "juntar/concatenar" 2 classes (exemplo de purple e border)
+//h2.setAttribute('class', 'border');
+//let currentClasses = h2.getAttribute('class');
+//h2.setAttribute('class', `${currentClasses} purple`)
+
+//h2.classList
+//DOMTokenList(2) ['border', 'purple', value: 'border purple']
+
+//PODERIA SER ASSIM : 
+h2.classList.add('purple')
+//h2.classList.add('border')
+
+// PARA REMOVEr
+//h2.classList.remove('border')
+
+// PARA VER QUAL CLASSE TEM
+// h2.classList.contains('border') ===> false or true
+
+// Para colocar ou tirar (nao precisa colocar add ou remove)
+// Serve para ativar e desativar.
+// Se ja tiver a class, ele tira. Se nao tiver class, ele coloca
+h2.classList.toggle('border')
