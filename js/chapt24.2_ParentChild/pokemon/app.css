@@ -1,0 +1,10 @@
+.pokemonClass {
+    display: inline-block;
+    /*display: block; /*===> dessa forma, cada pokemon tera seu proprio bloco (linha inteira da pag). o #Numero ficara no meio da pag*/
+    /*display: inline; /*===> dessa forma, cada pokemon tera seu proprio bloco (linha inteira da pag). o #Numero abaixo da img na esquerda*/
+    /* Se deixar sem o display:, ficara igual como se fosse display: block; */
+    text-align: center;
+}
+.pokemonClass img {
+    display: block; /* ====> sem isso, a imagem ficaria ao lado do #Number. O div seria a imagem e o #number lado a lado*/
+}
