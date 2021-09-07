@@ -66,3 +66,77 @@ console.groupEnd();
 
 // Agora sim o element seguinte que eh o proximo IMG
 squareImg.nextElementSibling
+
+//******************* */****************** */****************** */****************** */****************** */****************** */
+//******************* */****************** */****************** */****************** */****************** */****************** */
+// Append Child Append Child Append Child Append Child Append Child Append Child Append Child Append Child Append Child 
+
+//******************* */****************** */****************** */****************** */****************** */****************** */
+//******************* */****************** */****************** */****************** */****************** */****************** */
+
+let novoImg = document.createElement('img')
+//mostra os atributos normalmente
+//console.dir(novoImg)
+
+novoImg.src ='https://images.unsplash.com/photo-1630257956817-0734ff3846dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80'
+
+// 2 maneiras de coocar no HTML: APPEND e APPENDCHILD
+
+document.body.appendChild(novoImg);
+novoImg.classList.add('square')
+
+let novoH3 = document.createElement('h3');
+novoH3.innerText = "I am a new H3 here!"
+document.body.appendChild(novoH3);
+
+//-=-=-=-=
+//Example de Append
+/*
+let div = document.createElement("div")
+div.append("Some text")
+
+let div = document.createElement("div")
+let p = document.createElement("p")
+div.append("Some text", p)
+*/
+
+let firstP = document.querySelector('p');
+firstP.append("colocando esse texto com firstP.append !!!", "outro texto adicionado agora !!")
+//nesse caso nao da pra usar APPEND CHILD, pois precisa ser um NODE (elemento/variavel)
+
+//-=-=-=-=
+//Example de Prepend
+
+let novoB = document.createElement('b');
+novoB.append("Novo elemento <b> !") //======> usando APPEND ao inves de INNERTEXT
+firstP.prepend(novoB)
+
+//-=-=-=-=
+//Example de insertAdjacentElement
+// targetElement.insertAdjacentElement(position, element);
+/*A DOMString representing the position relative to the targetElement; must match (case-insensitively) one of the following strings:
+'beforebegin': Before the targetElement itself.
+'afterbegin': Just inside the targetElement, before its first child.
+'beforeend': Just inside the targetElement, after its last child.
+'afterend': After the targetElement itself. */
+
+let novoH2 = document.createElement('h2');
+novoH2.innerText =  "Inserindo esse H2 com insertAdjacentElement"
+let novoH22 = document.createElement('h2');
+novoH22.innerText =  "Segundo H2 com insertAdjacentElement"
+
+//vamos inserir entre o H1 e a imagem:
+let aux = document.querySelector('h1');
+aux.insertAdjacentElement('afterend', novoH2);
+
+let aux2 = document.querySelector('img');
+aux2.insertAdjacentElement('beforebegin', novoH22);
+
+
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+//Example de after. TEM TAMBEM O BEFORE (Nao suportado por todos browsers [IE])
+
+let novoH4 = document.createElement('h4');
+novoH4.innerText = "novo H4 inserido usando aux.after(novoH4)"
+aux.after(novoH4);
