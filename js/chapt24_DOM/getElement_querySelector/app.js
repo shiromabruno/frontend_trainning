@@ -1,3 +1,4 @@
+//console.dir(nomeDoObjeto)
 // const allLinks = document.querySelectorAll('a');
 
 // for (let link of allLinks) {

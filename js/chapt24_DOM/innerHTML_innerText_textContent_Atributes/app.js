@@ -1,3 +1,5 @@
+//console.dir(nomeDoObjeto)
+
 // Apenas mostra o Texto que aparece no index.html
 //Se um texto estiver com PROPERTY = NONE, ele NAAOO IRA MOSTRAR ! As TAGS nao sao mnostradas. Mostra os /n pra pular linha
 let p1InnerText = document.querySelector('p').innerText

@@ -1,3 +1,5 @@
+//console.dir(nomeDoObjeto)
+
 let h1teste = document.querySelector('h1');
 // h1teste.style ---> entrando no atributo style, vera q tem varios outros atributos
 
@@ -90,3 +92,14 @@ h2.classList.add('purple')
 // Serve para ativar e desativar.
 // Se ja tiver a class, ele tira. Se nao tiver class, ele coloca
 h2.classList.toggle('border')
+
+// ****************************************************************************************************************************
+// exercicio
+// exercicio
+/*
+let todosLi = document.querySelectorAll('li');
+
+for (let umli of todosLi){
+    umli.classList.toggle('highlight');
+}
+*/
