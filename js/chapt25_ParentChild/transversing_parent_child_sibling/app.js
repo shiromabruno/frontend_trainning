@@ -140,3 +140,33 @@ aux2.insertAdjacentElement('beforebegin', novoH22);
 let novoH4 = document.createElement('h4');
 novoH4.innerText = "novo H4 inserido usando aux.after(novoH4)"
 aux.after(novoH4);
+
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+//Exercicios Exercicios Exercicios Exercicios Exercicios Exercicios Exercicios 
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+// let container = document.querySelector('#container')
+// let i = 0;
+// let novoBotao;
+
+// for (i = 0; i < 100; i++){
+//     novoBotao = document.createElement('button');
+//     novoBotao.innerText = 'Novo botao';
+//     container.insertAdjacentElement('afterbegin', novoBotao);
+// }
+
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+//Remove CHILD and REMOVE.
+// REMOVE eh mt melhor
+
+// RemoveChild nao eh bom pq precisa saber/estar selecionado o parent
+let firstLI = document.querySelector('li');
+let ulParent = firstLI.parentElement;
+//ulParent.removeChild(firstLI);   // remove o 1. History no 'Contents'
+// firstLI.parentElement.removeChild(firstLI);
+
+// bem mais facil
+firstLI.remove() // ====> muito mais facil
