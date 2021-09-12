@@ -1,3 +1,5 @@
+//os atributos do evento dependem do tipo do EventListener (click, keydown, mouseup...)
+
 document.querySelector('button').addEventListener('click', function(event){
     console.log(event)
 })
