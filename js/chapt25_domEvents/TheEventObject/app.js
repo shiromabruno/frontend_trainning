@@ -1,31 +1,42 @@
-document.querySelector('button').addEventListener('click', function (evt) {
-    console.log(evt)
+document.querySelector('button').addEventListener('click', function(event){
+    console.log(event)
 })
 
-// const input = document.querySelector('input');
-// input.addEventListener('keydown', function (e) {
-//     console.log(e.key)
-//     console.log(e.code)
-// })
-// input.addEventListener('keyup', function () {
-//     console.log("KEYUP")
-// })
+let input = document.querySelector('input');
 
-window.addEventListener('keydown', function (e) {
-    switch (e.code) {
+input.addEventListener('keydown', function(event){ // keydown eh quando pressiono a tecla. (se manter pressionado, vai ficar contando a quantidade printada do keydown no console.log)
+    console.log(event.key) // a, shift
+    console.log(event.code) // KeyA, shiftLeft
+})
+
+/*input.addEventListener('keyup', function(){ // keyup eh quando vc release a tecla
+    console.log('keyup')
+})*/
+
+window.addEventListener('keydown', function(event){
+    //console.log(event.key) // a, shift, arrowLeft
+    //console.log(event.code) // KeyA, shiftLeft, arrowLeft
+
+    switch(event.code){
         case 'ArrowUp':
-            console.log("UP!");
+            console.log("tecla pra cima");
             break;
         case 'ArrowDown':
-            console.log("DOWN!");
+            console.log("tecla pra baixo");
             break;
         case 'ArrowLeft':
-            console.log("LEFT!");
+            console.log("tecla pra esquerda");
             break;
         case 'ArrowRight':
-            console.log("RIGHT!");
-            break
+            console.log("tecla pra direita");
+            break;
         default:
-            console.log("IGNORED!")
+            console.log('outra tecla!')
     }
+
 })
+
+// window.addEventListener('mousedown', function(event){
+//     console.log(event.key) // a, shift
+//     console.log(event.code) // KeyA, shiftLeft
+// })
