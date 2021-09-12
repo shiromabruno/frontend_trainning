@@ -1,16 +1,21 @@
-const button = document.querySelector('button');
-const h1 = document.querySelector('h1');
+let botao = document.querySelector('button')
+let h1 = document.querySelector('h1')
 
-button.addEventListener('click', function () {
-    const newColor = makeRandColor();
-    document.body.style.backgroundColor = newColor;
-    h1.innerText = newColor;
+botao.addEventListener('click', function(){
+    //document.body.style.backgroundColor = 'olive';
+
+    let newColorBack = randomizarCor();
+
+    document.body.style.backgroundColor = newColorBack;
+    h1.innerText = newColorBack;
+
 })
 
-const makeRandColor = () => {
-    const r = Math.floor(Math.random() * 255);
-    const g = Math.floor(Math.random() * 255);
-    const b = Math.floor(Math.random() * 255);
-    return `rgb(${r}, ${g}, ${b})`;
-}
+let randomizarCor = () => {
+    let r = Math.floor(Math.random() * 255) +1
+    let g = Math.floor(Math.random() * 255) +1
+    let b = Math.floor(Math.random() * 255) +1
 
+    let newColor = `rgb(${r}, ${g}, ${b})`
+    return newColor;
+}
