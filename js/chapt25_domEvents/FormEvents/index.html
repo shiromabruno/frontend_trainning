@@ -10,14 +10,20 @@
 <body>
     <h1>Form Events</h1>
 
+    <!-- Se vc tirar o ACTION, ao clicar no button, ira dar refresh na pagina com file:///D:/Projetos/Webdevelopment/exercicios/js/chapt25_domEvents/FormEvents/index.html?username=asdasd&tweet=qweqweqweqwe-->
     <form action="/dogs" id="tweetForm">
-        <input type="text" name="username" placeholder="username">
-        <input type="text" name="tweet" placeholder="tweet">
-        <button>Post Tweet</button>
+        <input type="text" name="username" placeholder="coloque o username">
+        <input type="text" name="tweet" placeholder="coloque o tweet">
+        <button>post tweet</button>
+
+        <!-- Para capturar conteudo do campo (exemplo do segundo input)
+        document.querySelectorAll('input').[1].value -->
+
     </form>
 
     <h2>Tweets:</h2>
     <ul id="tweets">
+
 
     </ul>
 

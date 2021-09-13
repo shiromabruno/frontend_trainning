@@ -1,25 +1,38 @@
+let tweetForm = document.querySelector('#tweetForm');
+let container = document.querySelector('#tweets');
 
+tweetForm.addEventListener('submit', function(e){
 
-const tweetForm = document.querySelector('#tweetForm');
-const tweetsContainer = document.querySelector('#tweets');
-tweetForm.addEventListener('submit', function (e) {
-    e.preventDefault();
+    e.preventDefault(); // previne o comportamento do SUBMIT via EVENTO. No caso do behavior do submit eh dar refresh/redireciona a pagina
 
-    // const usernameInput = document.querySelectorAll('input')[0];
-    // const tweetInput = document.querySelectorAll('input')[1];
-    const usernameInput = tweetForm.elements.username;
-    const tweetInput = tweetForm.elements.tweet;
-    addTweet(usernameInput.value, tweetInput.value)
-    usernameInput.value = '';
-    tweetInput.value = '';
+    // let usuario = document.querySelectorAll('input')[0].value;
+    // let mensagem = document.querySelectorAll('input')[1].value;
+
+    //Elements eh um dos aributos do objeto tweetForm
+    //Poderia deixar: tweetForm.elements.username.value. Mas preferimos deixar passando com .value no addTweetFunction
+    let usuarioElement = tweetForm.elements.username;
+    let tweetElement = tweetForm.elements.tweet;
+
+    // console.log("Via querySelectorAll: " + usuario, mensagem);
+    // console.log("Via tweetForm.elements: " + usuarioElement, tweetElement);
+
+    addTweetFunction(usuarioElement.value, tweetElement.value);
+
+    usuarioElement.value = '';
+    tweetElement.value = '';
+
 });
 
-const addTweet = (username, tweet) => {
-    const newTweet = document.createElement('li');
-    const bTag = document.createElement('b');
-    bTag.append(username)
-    newTweet.append(bTag);
-    newTweet.append(`- ${tweet}`)
-    tweetsContainer.append(newTweet);
-}
+let addTweetFunction = (usernameFuncao, tweetFuncao) =>{
 
+    let newTweet = document.createElement('li');
+    let bTag = document.createElement('b');
+
+    bTag.append(usernameFuncao); //colocando o username "dentro" do B (bold)
+    newTweet.append(bTag);
+    newTweet.append(`- ${tweetFuncao}`);
+    
+    //console.log("tweet: " + newTweet); ===> se eu deixar dessa forma, ele vai LGOAR ASSIM: tweet: HTMLELement
+    console.log(newTweet);
+    container.append(newTweet);
+}
