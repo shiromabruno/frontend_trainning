@@ -15,3 +15,15 @@ input.addEventListener('input', function(e){
     h1.innerText = input.value;
 })
 
+/*
+Exercicio
+let texto = document.querySelector('#username');
+let h1 = document.querySelector('h1');
+
+texto.addEventListener('input', function(){
+    h1.innerText = `Welcome, ${texto.value}`
+    if(texto.value == ''){
+        h1.innerText = `Enter Your Username`
+    }
+})
+*/
