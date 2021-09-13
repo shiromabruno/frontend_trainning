@@ -36,3 +36,18 @@ let addTweetFunction = (usernameFuncao, tweetFuncao) =>{
     console.log(newTweet);
     container.append(newTweet);
 }
+
+// exericios:
+// form.addEventListener('submit', function(e){
+//     e.preventDefault();
+    
+//     let produto = form.elements.product.value;
+//     let quantidade = form.elements.qty.value;
+    
+//     let lista = document.querySelector('ul');
+//     let novoLi = document.createElement('li');
+    
+//     novoLi.append(`${quantidade} ${produto}`);
+//     lista.append(novoLi);
+    
+// })
