@@ -1,11 +1,11 @@
 // THE CALLBACK VERSION
-const fakeRequestCallback = (url, success, failure) => {
+const fakeRequestCallback = (url, success11, failure22) => {
     const delay = Math.floor(Math.random() * 4500) + 500;
     setTimeout(() => {
         if (delay > 4000) {
-            failure('Connection Timeout :(')
+            failure22('Connection Timeout :(')
         } else {
-            success(`Here is your fake data from ${url}`)
+            success11(`Here is your fake data from ${url}`)
         }
     }, delay)
 }
@@ -23,30 +23,34 @@ const fakeRequestPromise = (url) => {
     })
 }
 
-
-// fakeRequestCallback('books.com/page1',
-//     function (response) {
-//         console.log("IT WORKED!!!!")
-//         console.log(response)
-//         fakeRequestCallback('books.com/page2',
-//             function (response) {
-//                 console.log("IT WORKED AGAIN!!!!")
-//                 console.log(response)
-//                 fakeRequestCallback('books.com/page3',
-//                     function (response) {
-//                         console.log("IT WORKED AGAIN (3rd req)!!!!")
-//                         console.log(response)
-//                     },
-//                     function (err) {
-//                         console.log("ERROR (3rd req)!!!", err)
-//                     })
-//             },
-//             function (err) {
-//                 console.log("ERROR (2nd req)!!!", err)
-//             })
-//     }, function (err) {
-//         console.log("ERROR!!!", err)
-//     })
+// nesse exemplo de chamada, temos q passar em cada request a funcao se OK e a funcao se NOK.
+// Se OK, chama a mesma funcao e passando de novo o OK e o NOK...
+// como pode ver, cada request, fica ainda maior o nesting...
+// promise ajuda a arrumar o nesting
+fakeRequestCallback('books.com/page1', 
+    function(response){
+        console.log("it worked in time, page1! " + response)
+        fakeRequestCallback('books.com/page2',
+        (response) => {
+            console.log("it worked in time, page2! " + response)
+            fakeRequestCallback('books.com/page3',
+                function(response){
+                    console.log("it worked in time, page3! " + response)
+                },
+                (err) => {
+                    console.log("did not work in time page3... " + err)
+                }
+            )
+        },
+        function (err){
+            console.log("did not work in time page2... " + err)
+        }
+        )
+    }, 
+    (err) => {
+        console.log("did not work in time page1... " + err)
+    }
+)
 
 
 
@@ -79,25 +83,25 @@ const fakeRequestPromise = (url) => {
 
 // THE CLEANEST OPTION WITH THEN/CATCH
 // RETURN A PROMISE FROM .THEN() CALLBACK SO WE CAN CHAIN!
-fakeRequestPromise('yelp.com/api/coffee/page1')
-    .then((data) => {
-        console.log("IT WORKED!!!!!! (page1)")
-        console.log(data)
-        return fakeRequestPromise('yelp.com/api/coffee/page2')
-    })
-    .then((data) => {
-        console.log("IT WORKED!!!!!! (page2)")
-        console.log(data)
-        return fakeRequestPromise('yelp.com/api/coffee/page3')
-    })
-    .then((data) => {
-        console.log("IT WORKED!!!!!! (page3)")
-        console.log(data)
-    })
-    .catch((err) => {
-        console.log("OH NO, A REQUEST FAILED!!!")
-        console.log(err)
-    })
+// fakeRequestPromise('yelp.com/api/coffee/page1')
+//     .then((data) => {
+//         console.log("IT WORKED!!!!!! (page1)")
+//         console.log(data)
+//         return fakeRequestPromise('yelp.com/api/coffee/page2')
+//     })
+//     .then((data) => {
+//         console.log("IT WORKED!!!!!! (page2)")
+//         console.log(data)
+//         return fakeRequestPromise('yelp.com/api/coffee/page3')
+//     })
+//     .then((data) => {
+//         console.log("IT WORKED!!!!!! (page3)")
+//         console.log(data)
+//     })
+//     .catch((err) => {
+//         console.log("OH NO, A REQUEST FAILED!!!")
+//         console.log(err)
+//     })
 
 
 
