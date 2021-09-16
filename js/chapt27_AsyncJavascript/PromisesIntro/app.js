@@ -14,7 +14,7 @@ const fakeRequestPromise = (url) => {
     return new Promise((resolve, reject) => {
         const delay = Math.floor(Math.random() * (4500)) + 500;
         setTimeout(() => {
-            if (delay > 4000) {
+            if (delay > 3000) {
                 reject('Connection Timeout :(')
             } else {
                 resolve(`Here is your fake data from ${url}`)
@@ -28,30 +28,30 @@ const fakeRequestPromise = (url) => {
 // como pode ver, cada request, fica ainda maior o nesting...
 // promise ajuda a arrumar o nesting
 
-fakeRequestCallback('books.com/page1', 
-    function(response){
-        console.log("it worked in time, page1! " + response)
-        fakeRequestCallback('books.com/page2',
-        (response) => {
-            console.log("it worked in time, page2! " + response)
-            fakeRequestCallback('books.com/page3',
-                function(response){
-                    console.log("it worked in time, page3! " + response)
-                },
-                (err) => {
-                    console.log("did not work in time page3... " + err)
-                }
-            )
-        },
-        function (err){
-            console.log("did not work in time page2... " + err)
-        }
-        )
-    }, 
-    (err) => {
-        console.log("did not work in time page1... " + err)
-    }
-)
+// fakeRequestCallback('books.com/page1', 
+//     function(response){
+//         console.log("it worked in time, page1! " + response)
+//         fakeRequestCallback('books.com/page2',
+//         (response) => {
+//             console.log("it worked in time, page2! " + response)
+//             fakeRequestCallback('books.com/page3',
+//                 function(response){
+//                     console.log("it worked in time, page3! " + response)
+//                 },
+//                 (err) => {
+//                     console.log("did not work in time page3... " + err)
+//                 }
+//             )
+//         },
+//         function (err){
+//             console.log("did not work in time page2... " + err)
+//         }
+//         )
+//     }, 
+//     (err) => {
+//         console.log("did not work in time page1... " + err)
+//     }
+// )
 
 //** *///** *///** *///** *///** *///** *///** *///** *///** *///** *///** *///** *///** *///** */
 // let requestShi = fakeRequestPromise('google.com/api/brunoshiroma');
@@ -65,76 +65,44 @@ fakeRequestCallback('books.com/page1',
 
 // ou vc pode faazer igual abaiaxo, SEM TER UM LET requestShi
 
-fakeRequestPromise('google.com/api/brunoshiroma/page1')
-.then(() =>{
-    console.log("Promise Shiroma 1 worked!")
-    fakeRequestPromise('google.com/api/brunoshiroma/page2')
-    .then(() =>{
-        console.log("Promise Shiroma 2 worked!")
-        fakeRequestPromise('google.com/api/brunoshiroma/page3')
-        .then(() =>{
-            console.log("Promise Shiroma 3 worked!")
-        })
-        .catch(() => {
-            console.log("Error in Promise 3 Shiroma...")
-        })
-    })
-    .catch(() => {
-        console.log("Error in Promise 2 Shiroma...")
-    })
-})
-.catch(() => {
-    console.log("Error in Promise 1 Shiroma...")
-})
-
-
-//** *///** *///** *///** *///** *///** *///** *///** *///** *///** *///** *///** *///** *///** */
-
-
-// fakeRequestPromise('yelp.com/api/coffee/page1')
-//     .then(() => {
-//         console.log("IT WORKED!!!!!! (page1)")
-//         fakeRequestPromise('yelp.com/api/coffee/page2')
-//             .then(() => {
-//                 console.log("IT WORKED!!!!!! (page2)")
-//                 fakeRequestPromise('yelp.com/api/coffee/page3')
-//                     .then(() => {
-//                         console.log("IT WORKED!!!!!! (page3)")
-//                     })
-//                     .catch(() => {
-//                         console.log("OH NO, ERROR!!! (page3)")
-//                     })
-//             })
-//             .catch(() => {
-//                 console.log("OH NO, ERROR!!! (page2)")
-//             })
+// fakeRequestPromise('google.com/api/brunoshiroma/page1')
+// .then(() =>{
+//     console.log("Promise Shiroma 1 worked!")
+//     fakeRequestPromise('google.com/api/brunoshiroma/page2')
+//     .then(() =>{
+//         console.log("Promise Shiroma 2 worked!")
+//         fakeRequestPromise('google.com/api/brunoshiroma/page3')
+//         .then(() =>{
+//             console.log("Promise Shiroma 3 worked!")
+//         })
+//         .catch(() => {
+//             console.log("Error in Promise 3 Shiroma...")
+//         })
 //     })
 //     .catch(() => {
-//         console.log("OH NO, ERROR!!! (page1)")
+//         console.log("Error in Promise 2 Shiroma...")
 //     })
-
-
-// THE CLEANEST OPTION WITH THEN/CATCH
-// RETURN A PROMISE FROM .THEN() CALLBACK SO WE CAN CHAIN!
-// fakeRequestPromise('yelp.com/api/coffee/page1')
-//     .then((data) => {
-//         console.log("IT WORKED!!!!!! (page1)")
-//         console.log(data)
-//         return fakeRequestPromise('yelp.com/api/coffee/page2')
-//     })
-//     .then((data) => {
-//         console.log("IT WORKED!!!!!! (page2)")
-//         console.log(data)
-//         return fakeRequestPromise('yelp.com/api/coffee/page3')
-//     })
-//     .then((data) => {
-//         console.log("IT WORKED!!!!!! (page3)")
-//         console.log(data)
-//     })
-//     .catch((err) => {
-//         console.log("OH NO, A REQUEST FAILED!!!")
-//         console.log(err)
-//     })
+// })
+// .catch(() => {
+//     console.log("Error in Promise 1 Shiroma...")
+// })
 
 
 
+// Substiduindo a codigo de cima por esse de baixo mais clean
+
+fakeRequestPromise('google.com/api/brunoshiroma/page1')
+    .then((data) => { // data eh o retorno Here is your fake data from ${url} ou Connection Timeout :(
+        console.log("Promise Shiroma 1 worked! " + data)
+        return fakeRequestPromise('google.com/api/brunoshiroma/page2') // como tem RETURN, nao precisa de nested; o THEN na linha 99 eh o tratamento dessa linha RETURN
+    })
+    .then((data) => {
+        console.log("Promise Shiroma 2 worked! " + data)
+        return fakeRequestPromise('google.com/api/brunoshiroma/page3')
+    })
+    .then((data) => {
+        console.log("Promise Shiroma 3 worked! " + data)
+    })
+    .catch((err) =>{
+        console.log("Request FAILED! " + err)
+    })
