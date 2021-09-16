@@ -27,6 +27,7 @@ const fakeRequestPromise = (url) => {
 // Se OK, chama a mesma funcao e passando de novo o OK e o NOK...
 // como pode ver, cada request, fica ainda maior o nesting...
 // promise ajuda a arrumar o nesting
+
 fakeRequestCallback('books.com/page1', 
     function(response){
         console.log("it worked in time, page1! " + response)
@@ -52,10 +53,42 @@ fakeRequestCallback('books.com/page1',
     }
 )
 
+//** *///** *///** *///** *///** *///** *///** *///** *///** *///** *///** *///** *///** *///** */
+// let requestShi = fakeRequestPromise('google.com/api/brunoshiroma');
+// requestShi
+    // .then(() =>{
+    //     console.log("Promise Shiroma worked!")
+    // })
+    // .catch(() => {
+    //     console.log("Error in Promise Shiroma...")
+    // })
+
+// ou vc pode faazer igual abaiaxo, SEM TER UM LET requestShi
+
+fakeRequestPromise('google.com/api/brunoshiroma/page1')
+.then(() =>{
+    console.log("Promise Shiroma 1 worked!")
+    fakeRequestPromise('google.com/api/brunoshiroma/page2')
+    .then(() =>{
+        console.log("Promise Shiroma 2 worked!")
+        fakeRequestPromise('google.com/api/brunoshiroma/page3')
+        .then(() =>{
+            console.log("Promise Shiroma 3 worked!")
+        })
+        .catch(() => {
+            console.log("Error in Promise 3 Shiroma...")
+        })
+    })
+    .catch(() => {
+        console.log("Error in Promise 2 Shiroma...")
+    })
+})
+.catch(() => {
+    console.log("Error in Promise 1 Shiroma...")
+})
 
 
-
-
+//** *///** *///** *///** *///** *///** *///** *///** *///** *///** *///** *///** *///** *///** */
 
 
 // fakeRequestPromise('yelp.com/api/coffee/page1')
