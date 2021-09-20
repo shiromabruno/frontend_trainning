@@ -58,10 +58,15 @@ let fakeRequest = (url) => {
 
 let delayedColorChange = (color, delay) => {
     return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            document.body.style.backgroundColor = color;
-            resolve();
-        }, delay)
+        if (delay > 5000){
+            reject("Teste lancando erro se delay > 5000")
+        }
+        else{
+            setTimeout(() => {
+                document.body.style.backgroundColor = color;
+                resolve();
+            }, delay)
+    }
     })
 }
 
@@ -73,15 +78,15 @@ let delayedColorChange = (color, delay) => {
 //     }, delay)
 //}
 
-delayedColorChange('red', 1000)
-/*.then(() => {
-    return delayedColorChange('orange', 1000);
-})  ==> ao inves dessa forma, podemos fazer em uma linha apenas: */
-.then(() => delayedColorChange('yellow', 1000)) // se DEIXAR SEM AS CHAVES { blabla }, nao precisa do RETURN (como descrito acima)
-.then(() => delayedColorChange('green', 1000))
-.then(() => delayedColorChange('blue', 1000))
-.then(() => delayedColorChange('violet', 1000))
-.then(() => delayedColorChange('indigo', 1000))
+// delayedColorChange('red', 1000)
+// /*.then(() => {
+//     return delayedColorChange('orange', 1000);
+// })  ==> ao inves dessa forma, podemos fazer em uma linha apenas: */
+// .then(() => delayedColorChange('yellow', 1000)) // se DEIXAR SEM AS CHAVES { blabla }, nao precisa do RETURN (como descrito acima)
+// .then(() => delayedColorChange('green', 1000))
+// .then(() => delayedColorChange('blue', 1000))
+// .then(() => delayedColorChange('violet', 1000))
+// .then(() => delayedColorChange('indigo', 1000))
 
 // APENAS PARA COMPRACAO COM OQ ERA ANTES:
 
@@ -100,3 +105,39 @@ delayedColorChange('red', 1000)
 //         })
 //     })
 // });
+
+async function rainbow() {
+    await delayedColorChange('red', 1000) // o AWAIT espera o return dessa function (PROMISE) estar OK para rodar o restante do cod
+
+    console.log("So rodara esse console.log se ''await delayedColorChange('red', 1000)'' foi OK!")
+
+    await delayedColorChange('orange', 1000)
+    await delayedColorChange('yellow', 1000)
+    await delayedColorChange('green', 1000)
+    //await delayedColorChange('blue', 6000) // se deixar assim, index.html:1 Uncaught (in promise) Teste lancando erro se delay > 5000. E nao roda as linhas de baixo...
+    await delayedColorChange('blue', 1000)
+    await delayedColorChange('indigo', 1000)
+    await delayedColorChange('violet', 1000)
+
+    return "retorno do async function rainbow()"
+
+}
+
+// rainbow()
+//     .then((data) => {
+//         console.log("Chamada do rainbow() OK. Resultado: " + data)
+//     })
+//     .catch((erro) => {
+//         console.log("Erro no chamado do rainbow(). Erro retornado: " + erro)
+//     })  
+
+async function printRainbow(){
+    await rainbow()
+    .then((data) => {
+        console.log("Chamada printRainbow() OK. Resultado: " + data)
+    })
+    .catch((erro) => {
+        console.log("Erro no chamado do printRainbow(). Erro retornado: " + erro)
+    })  
+
+}
