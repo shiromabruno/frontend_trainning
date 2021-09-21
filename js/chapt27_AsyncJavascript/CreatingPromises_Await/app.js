@@ -8,12 +8,24 @@ let fakeRequest = (url) => {
     return new Promise((resolve, reject) => {
         let rand = Math.random();
         setTimeout(() => {
-            if (rand < 0.5) {
+            if (rand < 0.4) {
                 resolve('Your fake data here: Page 1 from DOG');
             }
             reject('Request failed error...');
         }, 3000);
     })
+}
+
+async function make2Requests(){
+    try{
+        let data1 = await fakeRequest('www.google.com/dogs1')
+        console.log(`Resultado first request:  ${data1}`)
+        let data2 = await fakeRequest('www.google.com/dogs2')
+        console.log(`Resultado second request:  ${data2}`)
+    }
+    catch(e){
+        console.log("Error, message error: " + e);
+    }
 }
 
 // fakeRequest('/dogs/1')
@@ -114,8 +126,8 @@ async function rainbow() {
     await delayedColorChange('orange', 1000)
     await delayedColorChange('yellow', 1000)
     await delayedColorChange('green', 1000)
-    //await delayedColorChange('blue', 6000) // se deixar assim, index.html:1 Uncaught (in promise) Teste lancando erro se delay > 5000. E nao roda as linhas de baixo...
-    await delayedColorChange('blue', 1000)
+    await delayedColorChange('blue', 6000) // se deixar assim, index.html:1 Uncaught (in promise) Teste lancando erro se delay > 5000. E nao roda as linhas de baixo...
+    //await delayedColorChange('blue', 1000)
     await delayedColorChange('indigo', 1000)
     await delayedColorChange('violet', 1000)
 
