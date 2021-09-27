@@ -11,47 +11,50 @@ axios.get('https://api.cryptonator.com/api/ticker/btc-usd')
         console.log("Erroooooo: " + erro)
     })
 
-let minhaFuncaoBitCoinPrice = async () =>{
-    try{
+let minhaFuncaoBitCoinPrice = async () => {
+    try {
         let resposta = await axios.get('https://api.cryptonator.com/api/ticker/btc-usd')
         console.log("Resposta da funcao: let minhaFuncaoBitCoinPrice = async () =>{: " + resposta.data.ticker.price)
-    } catch(e){
+    } catch (e) {
         console.log("Erroooooo: " + e)
     }
 }
 
-// fetch('https://api.cryptonator.com/api/ticker/btc-usd')
-//     .then(res => {
-//         console.log("RESPONSE, WAITING TO PARSE...", res)
-//         return res.json()
-//     })
-//     .then(data => {
-//         console.log("DATA PARSED...")
-//         console.log(data.ticker.price)
-//     })
-//     .catch(e => {
-//         console.log("OH NO! ERROR!", e)
-//     })
+// ****************************************************************************************************************************************
+// ****************************************************************************************************************************************
 
-// axios.get('https://api.cryptonator.com/api/ticker/btc-usd')
-//     .then(res => {
-//         console.log(res.data.ticker.price)
-//     })
-//     .catch(err => {
-//         console.log("ERROR!", err)
-//     })
+let jokes = document.querySelector('#jokes');
+let botao = document.querySelector('button')
+//botao.addEventListener('click', addNewJoke()); ===> se deixar aqui a linha, dara erro falando que 
+//Uncaught ReferenceError: Cannot access 'addNewJoke' before initialization
 
-// const fetchBitcoinPrice = async () => {
-//     try {
-//         const res = await axios.get('https://api.cryptonator.com/api/ticker/btc-usd')
-//         console.log(res.data.ticker.price)
-//     } catch (e) {
-//         console.log("ERROR!", e)
-//     }
-// }
+// se nao colocar o ASYNC no addNewJoke, aparecera esse erro:
+// Uncaught SyntaxError: await is only valid in async functions and the top level bodies of modules
+let addNewJoke = async () => {
+    let piada = await getDadJoke();
+    //console.log(piada.data.joke)
+    let novoLI = document.createElement('LI');
+    novoLI.append(piada); // poderia ser com novoLI.innerText...
+    jokes.append(novoLI)
+}
 
-// const jokes = document.querySelector('#jokes');
-// const button = document.querySelector('button');
+
+// precisa ter um header nessa API do jokes. Ver documentacao no google
+let getDadJoke = async () => {
+    try {
+        let configHeader = { headers: { Accept: 'application/json' } };
+        let resposta = await axios.get('https://icanhazdadjoke.com/', configHeader); // se deixar assim, o 'resposta' sera um codigo HTML inteiro...
+        return resposta.data.joke;
+    }
+    catch (e) {
+        console.log("Erro: " + e)
+        return "Erro no endpoint Jokes... no Jokes today"
+    }
+}
+
+botao.addEventListener('click', addNewJoke);
+
+
 
 // const addNewJoke = async () => {
 //     const jokeText = await getDadJoke();
