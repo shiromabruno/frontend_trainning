@@ -1,3 +1,25 @@
+// precisa desse script no HTML
+// <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+// o data com o ticker ja vem com parse
+axios.get('https://api.cryptonator.com/api/ticker/btc-usd')
+    .then(res => {
+        console.log("Retorno de um axios.get('https://api.cryptonator.com/api/ticker/btc-usd') sem ser por funcao: " + res.data.ticker.price)
+    })
+    .catch(erro => {
+        console.log("Erroooooo: " + erro)
+    })
+
+let minhaFuncaoBitCoinPrice = async () =>{
+    try{
+        let resposta = await axios.get('https://api.cryptonator.com/api/ticker/btc-usd')
+        console.log("Resposta da funcao: let minhaFuncaoBitCoinPrice = async () =>{: " + resposta.data.ticker.price)
+    } catch(e){
+        console.log("Erroooooo: " + e)
+    }
+}
+
 // fetch('https://api.cryptonator.com/api/ticker/btc-usd')
 //     .then(res => {
 //         console.log("RESPONSE, WAITING TO PARSE...", res)
@@ -19,34 +41,34 @@
 //         console.log("ERROR!", err)
 //     })
 
-const fetchBitcoinPrice = async () => {
-    try {
-        const res = await axios.get('https://api.cryptonator.com/api/ticker/btc-usd')
-        console.log(res.data.ticker.price)
-    } catch (e) {
-        console.log("ERROR!", e)
-    }
-}
+// const fetchBitcoinPrice = async () => {
+//     try {
+//         const res = await axios.get('https://api.cryptonator.com/api/ticker/btc-usd')
+//         console.log(res.data.ticker.price)
+//     } catch (e) {
+//         console.log("ERROR!", e)
+//     }
+// }
 
-const jokes = document.querySelector('#jokes');
-const button = document.querySelector('button');
+// const jokes = document.querySelector('#jokes');
+// const button = document.querySelector('button');
 
-const addNewJoke = async () => {
-    const jokeText = await getDadJoke();
-    const newLI = document.createElement('LI');
-    newLI.append(jokeText);
-    jokes.append(newLI)
-}
+// const addNewJoke = async () => {
+//     const jokeText = await getDadJoke();
+//     const newLI = document.createElement('LI');
+//     newLI.append(jokeText);
+//     jokes.append(newLI)
+// }
 
-const getDadJoke = async () => {
-    try {
-        const config = { headers: { Accept: 'application/json' } }
-        const res = await axios.get('https://icanhazdadjoke.com/', config)
-        return res.data.joke;
-    } catch (e) {
-        return "NO JOKES AVAILABLE! SORRY :("
-    }
+// const getDadJoke = async () => {
+//     try {
+//         const config = { headers: { Accept: 'application/json' } }
+//         const res = await axios.get('https://icanhazdadjoke.com/', config)
+//         return res.data.joke;
+//     } catch (e) {
+//         return "NO JOKES AVAILABLE! SORRY :("
+//     }
 
-}
+// }
 
-button.addEventListener('click', addNewJoke)
+// button.addEventListener('click', addNewJoke)

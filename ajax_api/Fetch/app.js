@@ -12,11 +12,14 @@
 //     console.log("Erro: ", error);
 // })
 
+// pELO visto o FETCH nao volta o promise fullfilled com data em JSON. Precisa fazer o await resposta.json();
+// o Axios ja volta a info com o PARSE
+
 let fetchBitcoinPrice = async () => {
     try {
         let resposta = await fetch('https://api.cryptonator.com/api/ticker/btc-usd');
         //console.log(resposta);
-        let data = await resposta.json();
+        let data = await resposta.json(); // precisa ter AWAIT pq o parse pra JSON tbm eh PROMISE ????
         console.log(data.ticker.price);
 
         // chamando de novo com outra URL
