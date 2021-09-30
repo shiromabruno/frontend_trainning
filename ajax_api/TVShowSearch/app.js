@@ -3,7 +3,11 @@ form.addEventListener('submit', async function(e){
     e.preventDefault();
     //console.dir(form.elements.query.value)
     let searchTerm = form.elements.query.value
-    let res = await axios.get(`http://api.tvmaze.com/search/shows?q=${searchTerm}`)
+    let teste = 'nada';
+    //let res = await axios.get(`http://api.tvmaze.com/search/shows?q=${searchTerm}`)
+    //let configs = { params: {q: searchTerm}, headers: { variavelNaoExiste: teste} }
+    let configs = { params: {q: searchTerm, variavelTestando: teste}}
+    let res = await axios.get(`http://api.tvmaze.com/search/shows`, configs)
     console.dir(res) //
     makeImages(res.data); // tem que passar res.data pq o res.data eh um LIST pra ser iterable
     
