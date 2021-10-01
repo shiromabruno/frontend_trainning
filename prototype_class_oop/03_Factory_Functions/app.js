@@ -5,12 +5,12 @@ function makeColor(r,g,b){
 	color.g = g;
 	color.b = b;
 	color.rgb = function(){ // o objetivo eh so chamar objetoX.rgb() que ja voltaria o rgb (nao precisa passa r,g,b)
-		let {r,g,b} = this;  // referese ao objeto COLOR
+		let {r: r1, g: g1, b: b1} = this;  // referese ao objeto COLOR
 		//return `rgb(${this.r}, ${this.g}, ${this.b})`; ==:> ao inves de usar essa linha, usar o destruct da linha de cima
-		return `rgb(${r}, ${g}, ${b})`;
+		return `rgb(${r1}, ${g1}, ${b1})`;
 	};
 	color.hex = function() { // o objetivo eh so chamar objetoX.hex() que ja voltaria o hex (nao precisa passa r,g,b)
-		let {r,g,b} = this; // referese ao objeto COLOR
+		let {r,g,b} = this; // referese ao objeto COLOR. Cria atributos R e G e B
 			return (
 				'#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)
 			);
