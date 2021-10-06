@@ -73,13 +73,21 @@ class Color {
 		// Multiply l and s by 100
 		s = +(s * 100).toFixed(1);
 		l = +(l * 100).toFixed(1);
-		this.h = h;
-		this.s = s;
-		this.l = l;
+		this.h = h; // criando um novo atributo aqui
+		this.s = s; // criando um novo atributo aqui
+		this.l = l; // criando um novo atributo aqui
 	}
 }
 const red = new Color(255, 67, 89, 'tomato');
-red.hsl();
-red.opposite();
-red.rgba(0.3);
+red.hsl(); // 'hsl(353,100%, 63.1%)'
+red.opposite(); // 'hsl(173,100%, 63.1%)'
+red.rgba(0.3); // 'rgba(255, 67, 89, 0.3)'
 const white = new Color(255, 255, 255, 'white');
+/*Color {r: 255, g: 255, b: 255, name: 'white', h: 0, …}
+b: 255
+g: 255
+h: 0
+l: 100
+name: "white"
+r: 255
+s: 0*/
