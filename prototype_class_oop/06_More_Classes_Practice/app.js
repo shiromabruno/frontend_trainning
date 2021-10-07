@@ -1,5 +1,6 @@
 class Color {
 	constructor(r, g, b, name) {
+		//this.calcHSL(); // se deixar aqui essa linha, os objetos ficarao sem INFO de h, l ,r, s
 		this.r = r;
 		this.g = g;
 		this.b = b;
