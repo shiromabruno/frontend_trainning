@@ -1,0 +1,21 @@
+Bruno Shiroma@shiroma-PC MINGW64 /d/Projetos/Webdevelopment/exercicios/nodeIntro (master)
+$ touch firstFileJavaScriptNode.js
+
+*** Editando no VSCODE ***
+
+Bruno Shiroma@shiroma-PC MINGW64 /d/Projetos/Webdevelopment/exercicios/nodeIntro (master)
+$ ls
+firstFileJavaScriptNode.js
+
+Bruno Shiroma@shiroma-PC MINGW64 /d/Projetos/Webdevelopment/exercicios/nodeIntro (master)
+$ node firstFileJavaScriptNode.js
+primeiro script para rodar no NODE. Loop number: 0
+primeiro script para rodar no NODE. Loop number: 1
+primeiro script para rodar no NODE. Loop number: 2
+primeiro script para rodar no NODE. Loop number: 3
+primeiro script para rodar no NODE. Loop number: 4
+primeiro script para rodar no NODE. Loop number: 5
+primeiro script para rodar no NODE. Loop number: 6
+primeiro script para rodar no NODE. Loop number: 7
+primeiro script para rodar no NODE. Loop number: 8
+primeiro script para rodar no NODE. Loop number: 9
